@@ -98,7 +98,7 @@ class EdwUser(AbstractUser):
         super().save(*args, **kwargs)
 
 
-class OkpAuthToken(AbstractAuthToken):
+class EdwAuthToken(AbstractAuthToken):
     data = models.JSONField(
         verbose_name=_("Data"),
         blank=True,

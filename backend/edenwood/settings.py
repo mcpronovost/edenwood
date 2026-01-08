@@ -243,6 +243,28 @@ UNFOLD = {
     "SIDEBAR": {
         "show_search": True,
         "show_all_applications": True,
+        "navigation": [
+            {
+                "title": "Authentication",
+                "collapsible": True,
+                "items": [
+                    {
+                        "title": "Users",
+                        "icon": "group",
+                        "link": reverse_lazy(
+                            "admin:edw_auth_edwuser_changelist"
+                        ),
+                    },
+                    {
+                        "title": "Tokens",
+                        "icon": "token",
+                        "link": reverse_lazy(
+                            "admin:edw_auth_edwauthtoken_changelist"
+                        ),
+                    },
+                ],
+            },
+        ],
     },
     "COLORS": {
         "base": {
