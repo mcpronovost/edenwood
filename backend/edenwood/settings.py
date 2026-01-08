@@ -22,6 +22,9 @@ DEBUG = os.getenv("DJANGO_DEBUG") == "True"
 # https://docs.djangoproject.com/en/6.1/ref/applications/
 
 INSTALLED_APPS = [
+    # unfold
+    "unfold",
+    # django
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -210,3 +213,63 @@ MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "data" / "mediafiles"
 
 WHITENOISE_KEEP_ONLY_HASHED_FILES = True
+
+
+# Unfold Settings
+# https://unfoldadmin.com/docs/installation/quickstart
+
+from django.templatetags.static import static  # noqa: E402
+from django.urls import reverse_lazy  # noqa: E402
+
+UNFOLD = {
+    "SITE_TITLE": "Edenwood",
+    "SITE_HEADER": "Edenwood",
+    "SITE_SUBHEADER": "Administration",
+    "SITE_URL": "/",
+    "SITE_SYMBOL": "dashboard",
+    # "SITE_ICON": lambda request: static("img/favicon-32.png"),
+    "SITE_FAVICONS": [
+        {
+            "rel": "icon",
+            "sizes": "32x32",
+            "type": "image/png",
+            "href": lambda request: static("img/favicon.png"),
+        },
+    ],
+    "SHOW_HISTORY": True,
+    "SHOW_LANGUAGES": True,
+    "SHOW_VIEW_ON_SITE": True,
+    "SHOW_BACK_BUTTON": True,
+    "SIDEBAR": {
+        "show_search": True,
+        "show_all_applications": True,
+    },
+    "COLORS": {
+        "base": {
+            "50": "250 250 250",
+            "100": "244 244 244",
+            "200": "231 231 231",
+            "300": "214 214 214",
+            "400": "168 168 168",
+            "500": "121 121 121",
+            "600": "94 94 94",
+            "700": "71 71 71",
+            "800": "47 47 47",
+            "900": "33 33 33",
+            "950": "15 15 15",
+        },
+        "primary": {
+            "50": "234 246 242",
+            "100": "208 236 228",
+            "200": "166 217 199",
+            "300": "123 197 170",
+            "400": "80 177 141",
+            "500": "54 157 117",
+            "600": "42 107 82",  # Hex: #2a6b52
+            "700": "36 91 70",
+            "800": "30 76 58",
+            "900": "24 61 46",
+            "950": "14 36 27",
+        }
+    }
+}
