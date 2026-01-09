@@ -19,7 +19,7 @@ DEBUG = os.getenv("DJANGO_DEBUG") == "True"
 
 
 # Applications
-# https://docs.djangoproject.com/en/6.1/ref/applications/
+# https://docs.djangoproject.com/en/6.0/ref/applications/
 
 INSTALLED_APPS = [
     # unfold
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 
 
 # Middlewares
-# https://docs.djangoproject.com/en/6.1/topics/http/middleware/
+# https://docs.djangoproject.com/en/6.0/topics/http/middleware/
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -77,7 +77,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 
 # Auth
-# https://docs.djangoproject.com/en/6.1/topics/auth/customizing/
+# https://docs.djangoproject.com/en/6.0/topics/auth/customizing/
 
 AUTH_USER_MODEL = "edw_auth.EdwUser"
 
@@ -110,7 +110,7 @@ REST_KNOX = {
 
 
 # Templates
-# https://docs.djangoproject.com/en/6.1/ref/settings/#templates
+# https://docs.djangoproject.com/en/6.0/ref/settings/#templates
 
 TEMPLATES = [
     {
@@ -130,7 +130,7 @@ TEMPLATES = [
 
 
 # Storage
-# https://docs.djangoproject.com/en/6.1/ref/settings/#storages
+# https://docs.djangoproject.com/en/6.0/ref/settings/#storages
 
 STORAGES = {
     "default": {
@@ -147,7 +147,7 @@ WSGI_APPLICATION = "edenwood.wsgi.application"
 
 
 # Database
-# https://docs.djangoproject.com/en/6.1/ref/settings/#databases
+# https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
     "default": {
@@ -162,7 +162,7 @@ DATABASES = {
 
 
 # Password validation
-# https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
+# https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
 PASSWORD_VALIDATION = "django.contrib.auth.password_validation"
 
@@ -204,7 +204,7 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/6.1/howto/static-files/
+# https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "data" / "staticfiles"
