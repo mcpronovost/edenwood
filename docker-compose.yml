@@ -24,7 +24,8 @@ services:
   backend:
     build: ./backend
     container_name: edenwood-backend
-    command: sh -c "gunicorn edenwood.wsgi:application --bind 0.0.0.0:8000"
+    command: sh -c "python manage.py runserver 0.0.0.0:8000"
+    # command: sh -c "gunicorn edenwood.wsgi:application --bind 0.0.0.0:8000"
     restart: unless-stopped
     depends_on:
       db:
