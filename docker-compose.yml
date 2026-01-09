@@ -1,0 +1,49 @@
+services:
+  db:
+    image: postgres:18
+    container_name: edenwood-db
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql
+    environment:
+      TIME_ZONE: ${TIME_ZONE}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: edenwood
+      POSTGRES_USER: ${DB_USER}
+    env_file:
+      - ./.env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d edenwood -h localhost"]
+      timeout: 20s
+      retries: 10
+      interval: 10s
+      start_period: 30s
+
+  backend:
+    build: ./backend
+    container_name: edenwood-backend
+    command: sh -c "gunicorn edenwood.wsgi:application --bind 0.0.0.0:8000"
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      TIME_ZONE: ${TIME_ZONE}
+      DB_ENGINE: django.db.backends.postgresql
+      DB_NAME: edenwood
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_PORT: ${DB_PORT}
+      DB_HOST: ${DB_HOST}
+      DATABASE_URL: postgresql+psycopg2://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}
+    env_file:
+      - ./.env
+
+volumes:
+  db_data: 

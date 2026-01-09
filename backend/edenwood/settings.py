@@ -63,7 +63,7 @@ MIDDLEWARE = [
 # Cors Settings
 # https://pypi.org/project/django-cors-headers/
 
-ALLOWED_HOSTS = ["localhost"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "0.0.0.0"]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost",
@@ -152,7 +152,7 @@ WSGI_APPLICATION = "edenwood.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": os.getenv("DB_ENGINE", "django.db.backends.sqlite3"),
-        "NAME": os.getenv("DB_NAME", BASE_DIR / "db.sqlite3"),
+        "NAME": os.getenv("DB_NAME", "db.sqlite3"),
         "USER": os.getenv("DB_USER", ""),
         "PASSWORD": os.getenv("DB_PASSWORD", ""),
         "HOST": os.getenv("DB_HOST", ""),
@@ -213,6 +213,8 @@ MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "data" / "mediafiles"
 
 WHITENOISE_KEEP_ONLY_HASHED_FILES = True
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 # Unfold Settings
