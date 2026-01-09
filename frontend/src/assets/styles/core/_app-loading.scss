@@ -1,0 +1,36 @@
+.edw-app-loading {
+  display: block;
+  height: 2px;
+  width: 100%;
+  overflow: hidden;
+
+  &-bar {
+    background-color: var(--edw-c-primary);
+    height: 100%;
+    width: 100%;
+    transition: width 0.2s ease-in-out;
+    animation: edw-app-loading-bar-animation 1s linear infinite,
+               edw-app-loading-opacity-animation 1.5s ease-in-out infinite;
+
+    @keyframes edw-app-loading-bar-animation {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    @keyframes edw-app-loading-opacity-animation {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.4;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
