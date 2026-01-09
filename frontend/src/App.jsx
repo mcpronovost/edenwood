@@ -1,18 +1,24 @@
-import "./App.css";
+import Providers from "@/components/Providers";
+
+function Layout() {
+  return (
+    <div id="edw-app">
+      <aside className="edw-app-sidebar">side</aside>
+      <div id="edw-app-core">
+        <header className="edw-app-header">header</header>
+        <main id="edw-app-main">
+          <h1>Welcome to Edenwood</h1>
+        </main>
+      </div>
+    </div>
+  );
+}
 
 function App() {
   return (
-    <>
-      <h1>Edenwood</h1>
-      <div className="card">
-        <p>
-          Entre dans la clairière
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Edit <code>src/App.jsx</code> and save to test HMR
-      </p>
-    </>
+    <Providers>
+      <Layout />
+    </Providers>
   );
 }
 

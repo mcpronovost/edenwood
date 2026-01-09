@@ -1,0 +1,9 @@
+.edw-app-sidebar {
+  background-color: var(--edw-app-sidebar-bg, #0e120f);
+  color: var(--edw-app-sidebar-fg, #FFFFFF);
+  flex: 0 1 var(--edw-app-sidebar-width, 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: flex-basis 0.3s;
+}

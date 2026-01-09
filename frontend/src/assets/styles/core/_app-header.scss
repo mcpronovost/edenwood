@@ -1,0 +1,11 @@
+.edw-app-header {
+  background-color: var(--edw-app-header-bg, #0e120f);
+  color: var(--edw-app-header-fg, #FFFFFF);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 32px;
+  height: var(--oyk-app-bar-height);
+  padding: 0 8px;
+}
