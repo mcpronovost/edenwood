@@ -5,9 +5,26 @@
   --edw-core-bg: #0e1a14;
   --edw-core-fg: #ACB5AF;
 
+  --edw-c-primary: var(--edw-default-primary);
+  --edw-c-primary-fg: var(--edw-default-primary-fg);
+
+  --edw-c-danger: #e25353;
+  --edw-c-warning: #dea125;
+  --edw-c-success: #129929;
+
   --edw-app-header-bg: #0E120F;
   --edw-app-header-fg: #ACB5AF;
+  --edw-app-header-height: 48px;
 
   --edw-app-sidebar-bg: #0E120F;
   --edw-app-sidebar-fg: #ACB5AF;
+  --edw-app-sidebar-width: 48px;
+  --edw-app-sidebar-width-open: 220px;
+
+  --edw-popper-bg: #0E0F12;
+  --edw-popper-fg: #aeafb7;
+  --edw-popper-item-bg: #14161a;
+  --edw-popper-item-fg: #a9acb6;
+
+  --edw-radius: 6px;
 }
