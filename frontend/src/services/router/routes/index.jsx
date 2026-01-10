@@ -1,4 +1,5 @@
 import React from "react";
+import { DEV_ROUTES } from "./dev";
 
 export const ROUTES = [
   {
@@ -25,6 +26,7 @@ export const ROUTES = [
       en: "login",
     },
   },
+  ...DEV_ROUTES,
   {
     name: "404",
     component: React.lazy(() => import("../../../pages/Error404")),
