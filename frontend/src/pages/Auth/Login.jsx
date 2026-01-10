@@ -3,7 +3,14 @@ import { useState } from "react";
 import { useRouter } from "@/services/router";
 import { useTranslation } from "@/services/translation";
 import { validateUsername, validatePassword } from "@/utils";
-import { EdwButton, EdwCard, EdwForm, EdwFormField, EdwFormMessage, EdwLink } from "@/components/common";
+import {
+  EdwButton,
+  EdwCard,
+  EdwForm,
+  EdwFormField,
+  EdwFormMessage,
+  EdwLink,
+} from "@/components/common";
 
 export default function Login() {
   const { n } = useRouter();
@@ -70,43 +77,56 @@ export default function Login() {
     <section className="edw-page edw-auth">
       <div className="edw-auth-container">
         <div className="edw-auth-header">
-          <h1 className="edw-auth-header-title">Sign in to your account</h1>
+          <h1 className="edw-auth-header-title">
+            {t("Sign in to your account")}
+          </h1>
           <p className="edw-auth-header-subtitle">
-            Or{" "}
+            {t("Or")}{" "}
             <EdwLink routeName="register" className="edw-auth-header-subtitle">
-              create a new account
+              {t("create a new account")}
             </EdwLink>
           </p>
         </div>
 
         <EdwCard>
-          <EdwForm className="edw-auth-form" onSubmit={handleSubmit} isLoading={isLoading}>
-          <EdwFormField
-            label={t("Username")}
-            name="username"
-            defaultValue={formData.username}
-            onChange={handleChange}
-            hasError={hasError?.fields?.username}
-            required
-            block
-          />
-          <EdwFormField
-            label={t("Password")}
-            name="password"
-            type="password"
-            defaultValue={formData.password}
-            onChange={handleChange}
-            hasError={hasError?.fields?.password}
-            required
-            block
-          />
-          {hasError?.message && <EdwFormMessage hasError={hasError?.message} />}
-          <div className="edw-form-actions">
-            <EdwButton type="submit" color="primary" disabled={isLoading} block>
-              {isLoading ? "Signing in..." : "Sign in"}
-            </EdwButton>
-          </div>
-        </EdwForm>
+          <EdwForm
+            className="edw-auth-form"
+            onSubmit={handleSubmit}
+            isLoading={isLoading}
+          >
+            <EdwFormField
+              label={t("Username")}
+              name="username"
+              defaultValue={formData.username}
+              onChange={handleChange}
+              hasError={hasError?.fields?.username}
+              required
+              block
+            />
+            <EdwFormField
+              label={t("Password")}
+              name="password"
+              type="password"
+              defaultValue={formData.password}
+              onChange={handleChange}
+              hasError={hasError?.fields?.password}
+              required
+              block
+            />
+            {hasError?.message && (
+              <EdwFormMessage hasError={hasError?.message} />
+            )}
+            <div className="edw-form-actions">
+              <EdwButton
+                type="submit"
+                color="primary"
+                disabled={isLoading}
+                block
+              >
+                {isLoading ? t("Signing in...") : t("Sign in")}
+              </EdwButton>
+            </div>
+          </EdwForm>
         </EdwCard>
       </div>
     </section>

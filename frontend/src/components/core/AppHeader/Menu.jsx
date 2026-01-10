@@ -1,18 +1,20 @@
 import { Menu } from "lucide-react";
 import { useRouter } from "@/services/router";
+import { useTranslation } from "@/services/translation";
 import { EdwButton, EdwDropdown, EdwLink } from "@/components/common";
 
 export default function AppHeaderMenu() {
   const { n } = useRouter();
+  const { t } = useTranslation();
 
   const menuList = [
     {
-      label: "About",
+      label: t("About"),
       routeName: "about",
       onClick:() => n("about"),
     },
     {
-      label: "Privacy Policy",
+      label: t("Privacy Policy"),
       routeName: "privacy-policy",
       onClick: () => n("privacy-policy"),
     },
