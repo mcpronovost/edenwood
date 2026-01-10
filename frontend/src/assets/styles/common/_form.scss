@@ -1,0 +1,145 @@
+.edw-form {
+  &-field {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 16px;
+
+    &-label {
+      color: var(--edw-card-fg);
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: block;
+      flex: 0 0 150px;
+      width: 150px;
+      padding: 12px 0;
+
+      .edw-form-field-required {
+        color: var(--edw-c-danger);
+        display: inline-block;
+        margin-left: 4px;
+      }
+
+      @media (max-width: 768px) {
+        flex: 0 0 auto;
+        width: 100%;
+        padding: 0;
+      }
+    }
+
+    &-input {
+      width: 100%;
+
+      input, textarea, select {
+        background-color: var(--edw-card-item-bg);
+        border: 1px solid var(--edw-card-item-bg);
+        border-radius: var(--edw-radius);
+        color: var(--edw-card-fg);
+        font-family: "Work Sans", sans-serif;
+        font-size: 0.875rem;
+        width: 100%;
+        padding: 12px;
+        transition: border-color 0.2s ease;
+  
+        &:focus {
+          border-color: var(--edw-c-primary);
+          outline: none;
+        }
+  
+        &--error {
+          border-color: var(--edw-c-danger);
+        }
+  
+        &::placeholder {
+          color: var(--edw-core-fg);
+          opacity: 0.6;
+        }
+      }
+  
+      input[type="color"] {
+        max-width: 45px;
+        height: 45px;
+        padding: 1px 4px;
+      }
+
+      &-radio {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        height: 100%;
+
+        input[type="radio"] {
+          display: none;
+        }
+
+        &-label {
+          display: flex;
+
+          input[type="radio"]:checked + &-btn {
+            background-color: color-mix(in srgb, var(--edw-c-primary) 20%, transparent);
+            border-color: color-mix(in srgb, var(--edw-c-primary) 40%, transparent);
+            color: var(--edw-c-primary-fg);
+          }
+
+          &-btn {
+            background-color: var(--edw-card-item-bg);
+            border: 1px solid var(--edw-card-item-bg);
+            border-radius: var(--edw-radius);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 6px 12px;
+          }
+        }
+      }
+    }
+
+    &-error {
+      color: var(--edw-c-danger);
+      font-size: 0.875rem;
+      font-weight: 500;
+      display: block;
+      margin-top: 4px;
+    }
+
+    &--block {
+      flex-direction: column;
+
+      .edw-form-field-label {
+        flex: 0 0 auto;
+        width: 100%;
+        padding: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  &-message {
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+
+    &-spacing {
+      justify-content: space-between;
+    }
+
+    &-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+  }
+}

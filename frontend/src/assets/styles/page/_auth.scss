@@ -1,0 +1,124 @@
+.edw-auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 3rem 1rem;
+
+  &-container {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  &-header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    &-title {
+      color: var(--edw-c-primary-fg);
+      font-family: "Work Sans", sans-serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem 0;
+    }
+
+    &-subtitle {
+      color: var(--edw-core-fg);
+      font-size: 0.875rem;
+      margin: 0;
+
+      a {
+        color: var(--edw-c-primary);
+        font-weight: 500;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &-form {
+    padding: 2rem;
+  }
+
+  &-error {
+    background-color: rgba(226, 83, 83, 0.1);
+    border: 1px solid rgba(226, 83, 83, 0.3);
+    border-radius: var(--edw-radius);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+
+    &-message {
+      color: var(--edw-c-danger);
+      font-size: 0.875rem;
+      margin: 0;
+    }
+  }
+
+  &-field {
+    margin-bottom: 1.5rem;
+
+    &-label {
+      color: var(--edw-card-fg);
+      font-size: 0.875rem;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    &-input {
+      background-color: var(--edw-card-item-bg);
+      border: 1px solid var(--edw-card-item-bg);
+      border-radius: var(--edw-radius);
+      color: var(--edw-card-fg);
+      font-size: 0.875rem;
+      width: 100%;
+      padding: 0.75rem;
+      transition: border-color 0.2s ease;
+
+      &:focus {
+        border-color: var(--edw-c-primary);
+        outline: none;
+      }
+
+      &--error {
+        border-color: var(--edw-c-danger);
+      }
+
+      &::placeholder {
+        color: var(--edw-core-fg);
+        opacity: 0.6;
+      }
+    }
+
+    &-error {
+      color: var(--edw-c-danger);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+    }
+  }
+
+  &-button {
+    background-color: var(--edw-c-primary);
+    border: none;
+    border-radius: var(--edw-radius);
+    color: var(--edw-c-primary-fg);
+    font-size: 0.875rem;
+    font-weight: 500;
+    width: 100%;
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    transition: background-color 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background-color: #9a750c;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

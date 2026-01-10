@@ -2,6 +2,8 @@ import { ArrowLeftFromLine, ArrowRightFromLine } from "lucide-react";
 import { useStore } from "@/services/store";
 import EdwAppHeaderMenu from "./Menu";
 import EdwAppHeaderNotifications from "./Notifications";
+import EdwAppHeaderAuth from "./Auth";
+import EdwAppHeaderUser from "./User";
 
 export default function AppHeader() {
   const { storeAppSidebarOpen, setStoreAppSidebarOpen, currentUser } = useStore();
@@ -19,7 +21,7 @@ export default function AppHeader() {
       </section>
       <EdwAppHeaderMenu />
       <EdwAppHeaderNotifications />
-      <section className="edw-app-header-user">{currentUser ? "logged in" : "logged out"}</section>
+      <section className="edw-app-header-user">{currentUser ? <EdwAppHeaderUser /> : <EdwAppHeaderAuth />}</section>
     </header>
   );
 }

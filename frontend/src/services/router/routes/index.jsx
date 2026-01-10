@@ -18,6 +18,14 @@ export const ROUTES = [
     },
   },
   {
+    name: "login",
+    component: React.lazy(() => import("../../../pages/Auth/Login")),
+    paths: {
+      fr: "connexion",
+      en: "login",
+    },
+  },
+  {
     name: "404",
     component: React.lazy(() => import("../../../pages/Error404")),
     paths: {

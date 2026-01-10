@@ -1,0 +1,10 @@
+.edw-card {
+  background-color: var(--edw-card-bg);
+  border-radius: var(--edw-radius);
+  color: var(--edw-card-fg);
+  padding: 16px;
+
+  &-nop {
+    padding: 0;
+  }
+}
