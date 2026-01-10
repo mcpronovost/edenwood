@@ -16,10 +16,12 @@
 
     &-title {
       color: var(--edw-c-primary-fg);
-      font-family: "Work Sans", sans-serif;
+      font-family: "Uncial Antiqua", sans-serif;
       font-size: 1.75rem;
-      font-weight: 600;
-      margin: 0 0 0.5rem 0;
+      font-weight: 400;
+      text-transform: uppercase;
+      max-width: 300px;
+      margin: 0 auto 0.5rem auto;
     }
 
     &-subtitle {
