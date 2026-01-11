@@ -8,6 +8,7 @@ import {
 import { useStore } from "@/services/store";
 import { useTranslation } from "@/services/translation";
 import EdwAppSidebarHeader from "./Header";
+import EdwAppSidebarUser from "./User";
 import EdwAppSidebarNavItem from "./NavItem";
 
 export default function AppSidebar() {
@@ -17,6 +18,7 @@ export default function AppSidebar() {
   return (
     <aside className={`edw-app-sidebar ${storeAppSidebarOpen ? "open" : ""}`}>
       <EdwAppSidebarHeader />
+      <EdwAppSidebarUser />
       <section className="edw-app-sidebar-menu">
         <nav className="edw-app-sidebar-nav">
           <ul className="edw-app-sidebar-nav-list">
