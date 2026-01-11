@@ -10,6 +10,7 @@
   justify-content: center;
   width: 24px;
   height: 24px;
+  transition: width 0.3s, height 0.3s;
 
   &-img {
     border-radius: 50%;

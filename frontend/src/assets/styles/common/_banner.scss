@@ -5,14 +5,26 @@
   justify-content: center;
   height: 170px;
   position: relative;
+  transition: height 0.3s;
 
   &-cover {
     background-color: var(--edw-card-subtle-bg);
     border-top-left-radius: var(--edw-radius);
     border-top-right-radius: var(--edw-radius);
     color: var(--edw-card-subtle-fg);
+    overflow: hidden;
     height: 100px;
     width: 100%;
+    transition: width 0.3s, height 0.3s;
+
+    &-image {
+      background-position: center;
+      background-size: cover;
+      height: 100px;
+      width: 100%;
+      opacity: 0.4;
+      transition: width 0.3s, height 0.3s;
+    }
   }
 
   &-avatar {
@@ -20,5 +32,6 @@
     top: 64px;
     left: 50%;
     transform: translate(-50%, 0);
+    transition: top 0.3s;
   }
 }
