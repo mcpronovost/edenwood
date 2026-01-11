@@ -6,7 +6,8 @@ export default function EdwBanner({
   avatarAbbr,
   avatarSize,
   avatarBorderSize,
-  avatarTop = 32,
+  avatarBorderColor,
+  avatarTop = 64,
   showAvatar = true,
   height = 170,
   coverHeight = 100,
@@ -17,7 +18,7 @@ export default function EdwBanner({
       <div className="edw-banner-cover" style={{ height: `${coverHeight}px` }}></div>
       {showAvatar && (
         <div className="edw-banner-avatar" style={{ top: `${avatarTop}px` }}>
-          <EdwAvatar src={avatarSrc} abbr={avatarAbbr} size={avatarSize} borderSize={avatarBorderSize} />
+          <EdwAvatar src={avatarSrc} abbr={avatarAbbr} size={avatarSize} borderSize={avatarBorderSize} borderColor={avatarBorderColor} />
         </div>
       )}
       {children}
