@@ -1,4 +1,4 @@
-import { EdwAvatar } from "./Avatar";
+import EdwAvatar from "./Avatar";
 
 export default function EdwBanner({
   children,
