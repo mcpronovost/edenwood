@@ -20,5 +20,10 @@
     "Or": "Ou",
     "create a new account": "créez un nouveau compte",
     "Signing in...": "Connexion en cours...",
-    "An error occurred": "Une erreur est survenue"
+    "An error occurred": "Une erreur est survenue",
+    "Under Construction": "En construction",
+    "This page is currently under construction. Please check back later.": "Cette page est actuellement en construction. Veuillez revenir plus tard.",
+    "Page Not Found": "Page non trouvée",
+    "The page you are looking for does not exist. Please check the URL and try again.": "La page que vous recherchez n'existe pas. Veuillez vérifier l'URL et réessayer.",
+    "Go to Home": "Retourner à l'accueil"
 }

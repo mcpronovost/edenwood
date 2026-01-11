@@ -11,7 +11,7 @@ export default function Error404() {
     <section className="edw-page edw-error404">
       <EdwHeading title="404" />
       <EdwGrid>
-        <EdwFeedback ghost title={t("Page Not Found")} message={t("The requested page could not be found. Please check the URL and try again.")} icon={Ghost}>
+        <EdwFeedback ghost title={t("Page Not Found")} message={t("The page you are looking for does not exist. Please check the URL and try again.")} icon={Ghost}>
           <EdwButton action={() => n("home")} color="primary">
             {t("Go to Home")}
           </EdwButton>
