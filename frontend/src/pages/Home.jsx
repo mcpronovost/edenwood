@@ -26,7 +26,6 @@ export default function Home() {
               img={d.img}
               name={d.name}
               type={d.type}
-              blurred
             />
           ))}
         </section>
