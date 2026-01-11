@@ -1,8 +1,10 @@
 export { default as EdwAlert } from "./Alert.jsx";
 export { default as EdwAvatar } from "./Avatar.jsx";
+export { default as EdwBanner } from "./Banner.jsx";
 export { default as EdwButton } from "./Button.jsx";
 export { default as EdwCard } from "./Card.jsx";
 export { default as EdwChip } from "./Chip.jsx";
+export { default as EdwDisplay } from "./Display.jsx";
 export { default as EdwDropdown } from "./Dropdown.jsx";
 export { default as EdwFeedback } from "./Feedback.jsx";
 export { default as EdwForm } from "./Form.jsx";

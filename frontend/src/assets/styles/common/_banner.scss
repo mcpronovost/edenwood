@@ -1,0 +1,24 @@
+.edw-banner {
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 170px;
+  position: relative;
+
+  &-cover {
+    background-color: var(--edw-card-subtle-bg);
+    border-top-left-radius: var(--edw-radius);
+    border-top-right-radius: var(--edw-radius);
+    color: var(--edw-card-subtle-fg);
+    height: 100px;
+    width: 100%;
+  }
+
+  &-avatar {
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
