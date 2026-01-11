@@ -9,7 +9,7 @@ export default function Home() {
     <section className="edw-page edw-home">
       <EdwHeading title={t("Home")} />
       <EdwGrid>
-        <EdwFeedback ghost title={t("Under Construction")} message={t("This page is currently under construction. Please check back later.")} icon={Construction} />
+        <EdwFeedback ghost variant="warning" title={t("Under Construction")} message={t("This page is currently under construction. Please check back later.")} icon={Construction} />
       </EdwGrid>
     </section>
   );

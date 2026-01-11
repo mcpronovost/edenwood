@@ -1,7 +1,16 @@
+import { Construction } from "lucide-react";
+import { useTranslation } from "@/services/translation";
+import { EdwFeedback, EdwGrid, EdwHeading } from "@/components/common";
+
 export default function About() {
+  const { t } = useTranslation();
+
   return (
-    <div>
-      <h1>Welcome to the About Page</h1>
-    </div>
+    <section className="edw-page edw-about">
+      <EdwHeading title={t("About")} />
+      <EdwGrid>
+        <EdwFeedback ghost variant="warning" title={t("Under Construction")} message={t("This page is currently under construction. Please check back later.")} icon={Construction} />
+      </EdwGrid>
+    </section>
   );
 }
