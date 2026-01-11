@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     # edenwood
     "edenwood.core",
     "edenwood.contrib.auth",
+    "edenwood.api",
     "edenwood.app",
     # cleanup
     "django_cleanup.apps.CleanupConfig",

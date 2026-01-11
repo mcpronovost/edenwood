@@ -1,5 +1,6 @@
 import { useState } from "react";
-//import { api } from "@/services/api";
+import { api } from "@/services/api";
+import { useAuth } from "@/services/auth";
 import { useRouter } from "@/services/router";
 import { useTranslation } from "@/services/translation";
 import { validateUsername, validatePassword } from "@/utils";
@@ -13,6 +14,7 @@ import {
 } from "@/components/common";
 
 export default function Login() {
+  const { setUser, setRat } = useAuth();
   const { n } = useRouter();
   const { t } = useTranslation();
 
@@ -64,8 +66,14 @@ export default function Login() {
       return;
     }
     try {
-      // await api.login(formData);
-      n("home");
+      const result = await api.login(formData);
+      if (result.token) {
+        setRat(result.token);
+        setUser(result.user);
+        n("home");
+      } else {
+        throw new Error();
+      }
     } catch (e) {
       setHasError(e.error || t("An error occurred"));
     } finally {

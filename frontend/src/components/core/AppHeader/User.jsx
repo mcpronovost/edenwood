@@ -1,6 +1,6 @@
 import { LogOut, ListTodo, Orbit, Users } from "lucide-react";
 
-// import { api } from "@/services/api";
+import { api } from "@/services/api";
 import { useRouter } from "@/services/router";
 import { useStore } from "@/services/store";
 import { useTranslation } from "@/services/translation";
@@ -13,19 +13,19 @@ export default function AppBarUser() {
 
   const handleLogout = async () => {
     try {
-      // await api.logout();
+      await api.logout();
     } finally {
       n("login");
     }
   };
 
   return (
-    <section className="edw-app-bar-user">
+    <section className="edw-app-header-user">
       <EdwDropdown
         toggle={
-          <button className="edw-app-bar-user-button">
-            <span className="edw-app-bar-user-button-name">{currentUser.playername}</span>
-            <EdwAvatar size={36} src={currentUser.avatar} name={currentUser.playername} abbr={currentUser.abbr} />
+          <button className="edw-app-header-user-button">
+            <span className="edw-app-header-user-button-name">{currentUser.name}</span>
+            <EdwAvatar size={36} src={currentUser.avatar} name={currentUser.name} abbr={currentUser.abbr} />
           </button>
         }
         menu={[

@@ -13,7 +13,7 @@ const EdwDropdown = forwardRef(({ toggle, menu, direction = "left", disabled = f
   }));
 
   const handleToggle = () => {
-    if (disabled || menu.length === 0) return;
+    if (disabled || !menu || menu.length === 0) return;
     setIsOpen(!isOpen);
   };
 
@@ -40,7 +40,7 @@ const EdwDropdown = forwardRef(({ toggle, menu, direction = "left", disabled = f
   return (
     <div ref={dropdownRef} className="edw-dropdown">
       <div
-        className={`edw-dropdown-toggle ${disabled || menu.length === 0 ? "disabled" : ""}`}
+        className={`edw-dropdown-toggle ${disabled || !menu || menu.length === 0 ? "disabled" : ""}`}
         onClick={() => handleToggle()}
       >
         {toggle}

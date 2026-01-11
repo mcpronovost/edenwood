@@ -7,7 +7,7 @@ import {
 } from "react";
 
 import {
-  KEY_TOKEN,
+  KEY_RAT,
   KEY_USER,
   KEY_APP_SIDEBAR_OPEN,
 } from "./constants";
@@ -21,7 +21,7 @@ export function StoreProvider({ children }) {
     return storeGet(KEY_USER);
   });
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
-    const token = storeGet(KEY_TOKEN);
+    const token = storeGet(KEY_RAT);
     return !!token;
   });
   const [storeAppSidebarOpen, setStoreAppSidebarOpen] = useState(() => {

@@ -25,7 +25,7 @@ export default function AppHeaderMenu() {
       <div className="edw-app-header-menu-mobile">
         <EdwDropdown
           toggle={
-            <EdwButton className="oyk-app-bar-menu-mobile-toggle" plain style={{ padding: 0 }}>
+            <EdwButton className="edw-app-header-menu-mobile-toggle" plain style={{ padding: 0 }}>
               <Menu size={24} />
             </EdwButton>
           }

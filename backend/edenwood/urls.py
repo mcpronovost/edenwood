@@ -11,6 +11,7 @@ from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
+    path("api/", include("edenwood.api.urls")),
     path("", RedirectView.as_view(url="/fr/", permanent=False)),
 ] + i18n_patterns(
     path("admin/", admin.site.urls),
