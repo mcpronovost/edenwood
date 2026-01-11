@@ -1,19 +1,21 @@
-import { LogOut, ListTodo, Orbit, Users } from "lucide-react";
+import { LogOut, ListTodo, GalleryHorizontalEnd } from "lucide-react";
 
 import { api } from "@/services/api";
+import { useAuth } from "@/services/auth";
 import { useRouter } from "@/services/router";
-import { useStore } from "@/services/store";
 import { useTranslation } from "@/services/translation";
 import { EdwAvatar, EdwDropdown } from "@/components/common";
 
-export default function AppBarUser() {
+export default function AppHeaderUser() {
+  const { currentUser, setUser, setRat } = useAuth();
   const { n } = useRouter();
-  const { currentUser } = useStore();
   const { t } = useTranslation();
 
   const handleLogout = async () => {
     try {
       await api.logout();
+      setUser(null);
+      setRat(null);
     } finally {
       n("login");
     }
@@ -37,13 +39,8 @@ export default function AppBarUser() {
             divider: true,
           },
           {
-            label: t("Your worlds"),
-            icon: <Orbit size={18} />,
-            onClick: () => n("settings-worlds"),
-          },
-          {
-            label: t("Your characters"),
-            icon: <Users size={18} />,
+            label: t("Your cards"),
+            icon: <GalleryHorizontalEnd size={18} />,
             disabled: true,
             onClick: () => {},
           },

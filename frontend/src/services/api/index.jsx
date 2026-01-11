@@ -1,6 +1,6 @@
-import { KEY_RAT } from "@/services/store/constants";
 import { API_URL, API_HEADERS, edwEncode, edwDecode } from "./utils";
-import { storeGet } from "@/services/store/utils";
+import { KEY_USER, KEY_RAT } from "@/services/store/constants";
+import { storeGet, storeRemove } from "@/services/store/utils";
 
 class EdwApi {
   get lang() {
@@ -34,6 +34,11 @@ class EdwApi {
       });
 
       if (!response.ok) {
+        if ((url.endsWith("logout/") || url.endsWith("logoutall/")) && response.status === 401) {
+          return {
+            success: true,
+          };
+        }
         let errorMsg = `HTTP error! status: ${response.status}`;
         try {
           const errorData = await response.json();
@@ -98,6 +103,8 @@ class EdwApi {
 
   async logout() {
     const result = await this.post("/auth/logout/");
+    storeRemove(KEY_USER);
+    storeRemove(KEY_RAT);
     return result;
   }
 

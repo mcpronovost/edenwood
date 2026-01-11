@@ -5,6 +5,7 @@ import {
   ListTodo,
   Settings,
 } from "lucide-react";
+import { useAuth } from "@/services/auth";
 import { useStore } from "@/services/store";
 import { useTranslation } from "@/services/translation";
 import EdwAppSidebarHeader from "./Header";
@@ -12,7 +13,8 @@ import EdwAppSidebarUser from "./User";
 import EdwAppSidebarNavItem from "./NavItem";
 
 export default function AppSidebar() {
-  const { currentUser, storeAppSidebarOpen } = useStore();
+  const { isAuth } = useAuth();
+  const { storeAppSidebarOpen } = useStore();
   const { t } = useTranslation();
 
   return (
@@ -24,13 +26,8 @@ export default function AppSidebar() {
           <ul className="edw-app-sidebar-nav-list">
             <EdwAppSidebarNavItem icon={LayoutDashboard} text={t("Dashboard")} href="home" />
             <EdwAppSidebarNavItem icon={Compass} text={t("Discover")} href="discover" />
+            {isAuth && (<EdwAppSidebarNavItem icon={ListTodo} text={t("Tasks")} href="tasks" />)}
           </ul>
-          {currentUser && (
-            <ul className="edw-app-sidebar-nav-list">
-              <EdwAppSidebarNavItem icon={LayoutDashboard} text={t("Dashboard")} href="home" />
-              <EdwAppSidebarNavItem icon={ListTodo} text={t("Tasks")} href="tasks" />
-            </ul>
-          )}
         </nav>
       </section>
       <footer className="edw-app-sidebar-footer">

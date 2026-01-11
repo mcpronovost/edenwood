@@ -12,6 +12,9 @@ const AuthProvider = ({ children }) => {
     const encodedUser = storeGet(KEY_USER);
     return encodedUser ? encodedUser : null;
   });
+  const [isAuth, setIsAuth] = useState(() => {
+    return user ? true : false;
+  });
 
   const setUser = (user) => {
     if (user) {
@@ -19,11 +22,13 @@ const AuthProvider = ({ children }) => {
         ...user,
         lastUpdate: Date.now(),
       }
-      setUserState(payload);
+      setUserState(() => payload);
       storeSet(KEY_USER, payload);
+      setIsAuth(true);
     } else {
       setUserState(null);
       storeRemove(KEY_USER);
+      setIsAuth(false);
     }
   };
 
@@ -49,8 +54,8 @@ const AuthProvider = ({ children }) => {
             throw new Error("Invalid token");
           }
         } catch {
-          setRat(null);
-          setUser(null);
+          // setRat(null);
+          // setUser(null);
         }
       }
     };
@@ -66,7 +71,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, setUser, setRat }}>
+    <AuthContext.Provider value={{ currentUser: user, setUser, setRat, isAuth }}>
       {children}
     </AuthContext.Provider>
   );

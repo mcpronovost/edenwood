@@ -133,6 +133,50 @@
     }
   }
 
+  &-user {
+    text-align: center;
+
+    &-identity {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px;
+      transition: gap 0.3s, padding 0.3s;
+
+      &.hidden {
+        gap: 0;
+        padding: 0;
+      }
+
+      &-name {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.2;
+        transition: font-size 0.3s, line-height 0.3s, opacity 0.3s;
+      }
+
+      &-title {
+        font-size: 0.8rem;
+        font-weight: 300;
+        line-height: 1.2;
+        opacity: 0.7;
+        transition: font-size 0.3s, line-height 0.3s, opacity 0.3s;
+      }
+
+      &.hidden {
+        .edw-app-sidebar-user-identity-name,
+        .edw-app-sidebar-user-identity-title {
+          font-size: 0;
+          line-height: 0;
+          opacity: 0;
+        }
+      }
+    }
+  }
+
   &-menu {
     flex: 1;
     padding: 16px 0;

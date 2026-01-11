@@ -1,4 +1,5 @@
 import { ArrowLeftFromLine, ArrowRightFromLine } from "lucide-react";
+import { useAuth } from "@/services/auth";
 import { useStore } from "@/services/store";
 import EdwAppHeaderMenu from "./Menu";
 import EdwAppHeaderNotifications from "./Notifications";
@@ -6,7 +7,8 @@ import EdwAppHeaderAuth from "./Auth";
 import EdwAppHeaderUser from "./User";
 
 export default function AppHeader() {
-  const { storeAppSidebarOpen, setStoreAppSidebarOpen, currentUser } = useStore();
+  const { isAuth } = useAuth();
+  const { storeAppSidebarOpen, setStoreAppSidebarOpen } = useStore();
 
   const handleToggleSidebar = () => {
     setStoreAppSidebarOpen(!storeAppSidebarOpen);
@@ -21,7 +23,7 @@ export default function AppHeader() {
       </section>
       <EdwAppHeaderMenu />
       <EdwAppHeaderNotifications />
-      <section className="edw-app-header-user">{currentUser ? <EdwAppHeaderUser /> : <EdwAppHeaderAuth />}</section>
+      <section className="edw-app-header-user">{isAuth ? <EdwAppHeaderUser /> : <EdwAppHeaderAuth />}</section>
     </header>
   );
 }
