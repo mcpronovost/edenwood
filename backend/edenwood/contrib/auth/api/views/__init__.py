@@ -5,6 +5,7 @@ from .auth import (
     EdwAuthRegisterView,
 )
 from .me import EdwAuthMeView
+from .users import EdwAuthUsersProfileView
 
 __all__ = [
     "EdwAuthLoginView",
@@ -12,4 +13,5 @@ __all__ = [
     "EdwAuthLogoutAllView",
     "EdwAuthRegisterView",
     "EdwAuthMeView",
+    "EdwAuthUsersProfileView",
 ]
