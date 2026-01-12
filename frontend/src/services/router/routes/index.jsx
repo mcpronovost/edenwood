@@ -1,4 +1,5 @@
 import React from "react";
+import { AUTH_ROUTES } from "./auth";
 import { DEV_ROUTES } from "./dev";
 
 export const ROUTES = [
@@ -26,13 +27,24 @@ export const ROUTES = [
       en: "discover",
     },
   },
+  ...AUTH_ROUTES,
   {
-    name: "login",
-    component: React.lazy(() => import("../../../pages/Auth/Login")),
+    name: "users",
+    component: React.lazy(() => import("../../../pages/Users/Profile")),
     paths: {
-      fr: "connexion",
-      en: "login",
+      fr: "u",
+      en: "u",
     },
+    children: [
+      {
+        name: "users-profile",
+        component: React.lazy(() => import("../../../pages/Users/Profile")),
+        paths: {
+          fr: "{userSlug}",
+          en: "{userSlug}",
+        },
+      },
+    ],
   },
   ...DEV_ROUTES,
   {

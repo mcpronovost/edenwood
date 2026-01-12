@@ -33,7 +33,7 @@ export default function AppHeaderUser() {
         menu={[
           {
             label: t("Your profile"),
-            onClick: () => n("player-profile", { playerSlug: currentUser.slug }),
+            onClick: () => n("users-profile", { userSlug: currentUser.slug }),
           },
           {
             divider: true,
