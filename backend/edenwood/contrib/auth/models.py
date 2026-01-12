@@ -59,7 +59,7 @@ class EdwUser(AbstractUser):
     cover = EdwImageField(
         verbose_name=_("Cover"),
         upload_to="users/covers",
-        max_width=1024,
+        max_width=1136,
         max_height=256,
         blank=True,
         null=True,
