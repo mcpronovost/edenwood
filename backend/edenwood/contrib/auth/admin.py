@@ -30,8 +30,6 @@ class EdwUserAdmin(UserAdmin, ModelAdmin):
             _("Identity"),
             {
                 "fields": (
-                    "first_name",
-                    "last_name",
                     "name",
                     "is_name_auto",
                     "abbr",
