@@ -17,11 +17,11 @@ export default function User() {
         avatarBorderSize={4}
         avatarBorderColor="var(--edw-app-sidebar-bg)"
         avatarSize={storeAppSidebarOpen ? 96 : 32}
-        avatarTop={storeAppSidebarOpen ? 48 : 12}
+        avatarTop={storeAppSidebarOpen ? 24 : 12}
         coverSrc={currentUser.cover}
-        coverHeight={storeAppSidebarOpen ? 100 : 32}
+        coverHeight={storeAppSidebarOpen ? 72 : 32}
         coverRadius="0"
-        height={storeAppSidebarOpen ? 160 : 64}
+        height={storeAppSidebarOpen ? 132 : 64}
       />
       <section className={`edw-app-sidebar-user-identity ${storeAppSidebarOpen ? '' : 'hidden'}`}>
         <div className="edw-app-sidebar-user-identity-name">

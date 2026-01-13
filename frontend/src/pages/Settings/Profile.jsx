@@ -60,9 +60,9 @@ export default function SettingsProfile() {
       </article>
       <EdwCard>
         <EdwForm className="edw-settings-profile-form" isLoading={isLoading}>
-          <h2>{t("Your Profile")}</h2>
+          <h2 className="edw-settings-profile-form-title">{t("Your Profile")}</h2>
           <EdwFormField
-            label={t("Name")}
+            label={t("Public Name")}
             name="name"
             defaultValue={profileForm.name}
             onChange={handleChange}

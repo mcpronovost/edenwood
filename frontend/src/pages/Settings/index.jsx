@@ -96,7 +96,7 @@ export default function Settings() {
                         <li key={li} className="edw-settings-nav-menu-item">
                           <EdwLink
                             routeName={l.routeName}
-                            className="edw-settings-nav-menu-item-link"
+                            className={`edw-settings-nav-menu-item-link ${`settings-${params?.section}` === l.routeName ? "edw-active" : ""}`}
                           >
                             {l.name}
                           </EdwLink>

@@ -14,6 +14,8 @@
     "Login": "Connexion",
     "Logout": "Déconnexion",
     "Username": "Nom d'utilisateur",
+    "Name": "Nom",
+    "Public Name": "Nom public",
     "Password": "Mot de passe",
     "Sign In": "Connexion",
     "Sign in": "Se connecter",
@@ -22,6 +24,9 @@
     "create a new account": "créez un nouveau compte",
     "Signing in...": "Connexion en cours...",
     "An error occurred": "Une erreur est survenue",
+    "Edit": "Modifier",
+    "Save": "Enregistrer",
+    "Cancel": "Annuler",
     "Under Construction": "En construction",
     "This page is currently under construction. Please check back later.": "Cette page est actuellement en construction. Veuillez revenir plus tard.",
     "Page Not Found": "Page non trouvée",
@@ -36,5 +41,7 @@
     "Invites": "Invitations",
     "Change your avatar and cover images, your name, and more": "Modifier vos images d'avatar et de couverture, votre nom, et plus",
     "Change settings, configure notifications, and more": "Modifier vos paramètres, configurer vos notifications, et plus",
-    "Manage friends and accept invites": "Gérer vos amis et accepter les invitations"
+    "Manage friends and accept invites": "Gérer vos amis et accepter les invitations",
+    "Change Avatar": "Modifier l'avatar",
+    "Change Cover": "Modifier la couverture"
 }
