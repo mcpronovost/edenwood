@@ -182,11 +182,6 @@
     padding: 16px 0;
   }
 
-  &-footer {
-    flex: 0;
-    padding: 8px 0;
-  }
-
   &-nav {
     &-list + &-list {
       border-top: 1px solid var(--edw-app-sidebar-bg-subtle);
@@ -278,5 +273,10 @@
         }
       }
     }
+  }
+
+  &-footer {
+    flex: 0;
+    padding: 8px 0;
   }
 }
