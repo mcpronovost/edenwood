@@ -85,13 +85,13 @@ const findRouteRecursive = (routes, pathSegments, pathlang) => {
             // Merge parent and child parameters
             return {
               route: childResult.route,
-              params: { ...params, ...childResult.params }
+              params: { ...params, ...childResult.params, ...childResult.route.params }
             };
           }
         }
         
         // If no children or no more segments, return this route with params
-        return { route, params };
+        return { route, params: { ...route.params, ...params} };
       }
     }
   }
@@ -106,7 +106,10 @@ export const findRoute = (pathname, pathlang) => {
   // Special case: if path is empty (root route), check for routes with empty paths first
   if (pathSegments.length === 0) {
     const rootRoute = ROUTES.find(route => route.paths[pathlang] === "");
-    if (rootRoute) return { route: rootRoute, params: {} };
+    if (rootRoute) {
+      const result = { route: rootRoute, params: { ...rootRoute.params} };
+      return result;
+    };
   }
   
   return findRouteRecursive(ROUTES, pathSegments, pathlang);

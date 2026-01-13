@@ -1,0 +1,131 @@
+.edw-settings {
+  &-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    &-nav {
+      flex: 0 0 256px;
+      padding-right: 8px;
+    }
+
+    &-main {
+      flex: 1 1 100%;
+      padding-left: 8px;
+    }
+  }
+
+  &-nav {
+    background-color: var(--edw-card-bg);
+    border-radius: var(--edw-radius);
+
+    &-item:not(.edw-first) {
+      border-top: 1px solid var(--edw-card-divider);
+      padding-top: 12px;
+    }
+
+    &-header {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px;
+
+      &-icon {
+        display: flex;
+        flex: 0 0 30px;
+        justify-content: flex-start;
+      }
+
+      &-title {
+        text-align: left;
+        display: flex;
+        flex: 1 1 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        &-name {
+          font-size: 1rem;
+          font-weight: 600;
+          line-height: 1.5;
+        }
+
+        &-desc {
+          font-size: 0.66rem;
+          font-weight: 400;
+          line-height: 1.5;
+          opacity: 0.6;
+        }
+      }
+
+      &-toggle {
+        display: flex;
+        flex: 0 0 30px;
+        justify-content: flex-end;
+        opacity: 0;
+      }
+    }
+
+    &-menu {
+      padding: 0 55px 24px;
+
+      &-item {
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 4px 0;
+
+        &-link {
+          display: block;
+          transition: color 0.3s;
+
+          &:hover {
+            color: var(--edw-c-primary);
+          }
+
+          &:active {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+
+  &-profile {
+    &-visual {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 16px;
+
+      &-preview {
+        flex: 1 0 400px;
+      }
+
+      &-avatar {
+        flex: 1 1 200px;
+      }
+
+      &-cover {
+        flex: 1 1 200px;
+      }
+
+      &-avatar,
+      &-cover {
+        &-title {
+          font-size: 0.9rem;
+          line-height: 1.5;
+          margin-top: 12px;
+        }
+
+        &-max {
+          font-size: 0.7rem;
+          line-height: 1.5;
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}

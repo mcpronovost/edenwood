@@ -25,5 +25,14 @@
     "This page is currently under construction. Please check back later.": "Cette page est actuellement en construction. Veuillez revenir plus tard.",
     "Page Not Found": "Page non trouvée",
     "The page you are looking for does not exist. Please check the URL and try again.": "La page que vous recherchez n'existe pas. Veuillez vérifier l'URL et réessayer.",
-    "Go to Home": "Retourner à l'accueil"
+    "Go to Home": "Retourner à l'accueil",
+    "General": "Général",
+    "Change Password": "Mot de passe",
+    "Privacy": "Vie privée",
+    "Friends": "Amis",
+    "Manage Friends": "Gérer les amis",
+    "Invites": "Invitations",
+    "Change your avatar and cover images, your name, and more": "Modifier vos images d'avatar et de couverture, votre nom, et plus",
+    "Change settings, configure notifications, and more": "Modifier vos paramètres, configurer vos notifications, et plus",
+    "Manage friends and accept invites": "Gérer vos amis et accepter les invitations"
 }
