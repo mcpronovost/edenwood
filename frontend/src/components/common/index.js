@@ -13,3 +13,4 @@ export { default as EdwFormMessage } from "./FormMessage.jsx";
 export { default as EdwGrid } from "./Grid.jsx";
 export { default as EdwHeading } from "./Heading.jsx";
 export { default as EdwLink } from "./Link.jsx";
+export { default as EdwLoading } from "./Loading.jsx";
