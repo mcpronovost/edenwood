@@ -6,6 +6,7 @@ from .views import (
     EdwAuthLogoutAllView,
     EdwAuthRegisterView,
     EdwAuthMeView,
+    EdwAuthMeEditView,
     EdwAuthUsersProfileView,
 )
 
@@ -15,5 +16,6 @@ urlpatterns = [
     path("logoutall/", EdwAuthLogoutAllView.as_view(), name="edw_auth_logoutall"),
     path("register/", EdwAuthRegisterView.as_view(), name="edw_auth_register"),
     path("me/", EdwAuthMeView.as_view(), name="edw_auth_me"),
+    path("me/edit/", EdwAuthMeEditView.as_view(), name="edw_auth_me_edit"),
     path("users/<slug:user_slug>/profile/", EdwAuthUsersProfileView.as_view(), name="edw_auth_users_profile"),
 ]

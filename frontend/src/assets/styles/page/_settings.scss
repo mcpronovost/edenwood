@@ -113,6 +113,10 @@
 
       &-preview {
         flex: 1 0 400px;
+
+        @media (max-width: 1380px) {
+          flex: 1 0 100%;
+        }
       }
 
       &-avatar {

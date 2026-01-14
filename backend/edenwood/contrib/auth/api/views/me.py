@@ -17,3 +17,24 @@ class EdwAuthMeView(APIView):
                 "user": serialized_user.data,
             }
         )
+
+
+class EdwAuthMeEditView(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def post(self, request, *args, **kwargs):
+        name = request.data.get("name")
+        avatar = request.data.get("avatar")
+        cover = request.data.get("cover")
+        request.user.name = name
+        if avatar is not None:
+            request.user.avatar = avatar
+        if cover is not None:
+            request.user.cover = cover
+        request.user.save()
+        serialized_user = EdwUserSerializer(request.user)
+        return Response(
+            {
+                "user": serialized_user.data,
+            }
+        )
