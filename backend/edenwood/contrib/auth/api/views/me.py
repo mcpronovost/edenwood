@@ -26,12 +26,16 @@ class EdwAuthMeEditView(APIView):
         name = request.data.get("name")
         avatar = request.data.get("avatar")
         cover = request.data.get("cover")
-        request.user.name = name
+
+        if name is not None:
+            request.user.name = name
         if avatar is not None:
             request.user.avatar = avatar
         if cover is not None:
             request.user.cover = cover
+
         request.user.save()
+
         serialized_user = EdwUserSerializer(request.user)
         return Response(
             {
