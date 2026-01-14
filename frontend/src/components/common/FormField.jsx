@@ -1,4 +1,5 @@
 export default function EdwFormField({
+  ref,
   label,
   name,
   type = "text",
@@ -20,6 +21,7 @@ export default function EdwFormField({
       <div className="edw-form-field-input">
         {type === "textarea" ? (
           <textarea
+            ref={ref}
             id={`field-${name}`}
             name={name}
             defaultValue={defaultValue}
@@ -28,7 +30,7 @@ export default function EdwFormField({
             required={required}
           />
         ) : type === "select" ? (
-          <select id={`field-${name}`} name={name} defaultValue={defaultValue} onChange={onChange} required={required}>
+          <select ref={ref} id={`field-${name}`} name={name} defaultValue={defaultValue} onChange={onChange} required={required}>
             {options.map((option) => (
               <option key={option.value} value={option.value}>
                 {option.label}
@@ -53,6 +55,7 @@ export default function EdwFormField({
           </div>
         ) : (
           <input
+            ref={ref}
             type={type}
             id={`field-${name}`}
             name={name}
