@@ -2,6 +2,7 @@
   background-color: var(--edw-card-bg);
   border-radius: var(--edw-radius);
   color: var(--edw-card-fg);
+  position: relative;
   padding: 16px;
 
   &-nop {
@@ -11,7 +12,24 @@
   &-fh {
     text-align: center;
     align-content: center;
-    justify-content: center;
     height: 100%;
+  }
+
+  &-aligntop {
+    align-content: flex-start;
+  }
+
+  &-clickable {
+    transition: box-shadow 0.3s, transform 0.3s;
+
+    &:hover {
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transform: translateY(-4px);
+    }
+
+    &:active {
+      transform: scale(0.96);
+    }
   }
 }
