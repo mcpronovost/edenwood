@@ -18,11 +18,11 @@ export default function SettingsProfile() {
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(null);
   const [profileForm, setProfileForm] = useState({
-    avatar: currentUser.avatar,
-    cover: currentUser.cover,
-    name: currentUser.name,
-    slug: currentUser.slug,
-    abbr: currentUser.abbr
+    avatar: currentUser.avatar || null,
+    cover: currentUser.cover || null,
+    name: currentUser.name || "",
+    slug: currentUser.slug || "",
+    abbr: currentUser.abbr || ""
   });
 
   const handleChange = (e) => {
@@ -93,15 +93,15 @@ export default function SettingsProfile() {
 
   const handleReset = async (e) => {
     setProfileForm({
-      avatar: currentUser.avatar,
-      cover: currentUser.cover,
-      name: currentUser.name,
-      slug: currentUser.slug,
-      abbr: currentUser.abbr
+      avatar: currentUser.avatar || null,
+      cover: currentUser.cover || null,
+      name: currentUser.name || "",
+      slug: currentUser.slug || "",
+      abbr: currentUser.abbr || ""
     });
-    nameRef.current.value = currentUser.name;
-    slugRef.current.value = currentUser.slug;
-    abbrRef.current.value = currentUser.abbr;
+    nameRef.current.value = currentUser.name || "";
+    slugRef.current.value = currentUser.slug || "";
+    abbrRef.current.value = currentUser.abbr || "";
   };
 
   const handleSubmit = async (e) => {
