@@ -25,7 +25,7 @@ export default function EdwAvatar({
       }}
     >
       {src ? (
-        <img src={!src.startsWith("http") ? `${DOMAIN}${src}` : src} alt={name} className="edw-avatar-img" />
+        <img src={(!src.startsWith("http") && !src.startsWith("blob")) ? `${DOMAIN}${src}` : src} alt={name} className="edw-avatar-img" />
       ) : abbr || name ? (
         <span className="edw-avatar-abbr" style={{ fontSize: size * 0.35 }}>
           {abbr || name.charAt(0).toUpperCase()}

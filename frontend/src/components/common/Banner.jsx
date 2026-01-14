@@ -34,7 +34,7 @@ export default function EdwBanner({
           style={{
             backgroundImage: coverSrc
               ? `url(${
-                  !coverSrc.startsWith("http") ? `${DOMAIN}${coverSrc}` : coverSrc
+                  (!coverSrc.startsWith("http") && !coverSrc.startsWith("blob")) ? `${DOMAIN}${coverSrc}` : coverSrc
                 })`
               : "none",
             height: `${coverHeight}px`,
