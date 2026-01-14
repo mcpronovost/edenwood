@@ -26,7 +26,6 @@ export default function SettingsProfile() {
   });
 
   const handleChange = (e) => {
-    console.log("handleChange");
     const { name, value } = e.target;
     setProfileForm((prev) => ({
       ...prev,
@@ -90,6 +89,19 @@ export default function SettingsProfile() {
       cover: previewUrl,
       coverFile: file,
     }));
+  };
+
+  const handleReset = async (e) => {
+    setProfileForm({
+      avatar: currentUser.avatar,
+      cover: currentUser.cover,
+      name: currentUser.name,
+      slug: currentUser.slug,
+      abbr: currentUser.abbr
+    });
+    nameRef.current.value = currentUser.name;
+    slugRef.current.value = currentUser.slug;
+    abbrRef.current.value = currentUser.abbr;
   };
 
   const handleSubmit = async (e) => {
@@ -201,6 +213,7 @@ export default function SettingsProfile() {
             defaultValue={profileForm.slug}
             onChange={handleChange}
             hasError={hasError?.fields?.slug}
+            required
             disabled
           />
           {hasError?.slug && (
@@ -213,6 +226,7 @@ export default function SettingsProfile() {
             defaultValue={profileForm.abbr}
             onChange={handleChange}
             hasError={hasError?.fields?.abbr}
+            required
             disabled
           />
           {hasError?.abbr && (
@@ -225,6 +239,14 @@ export default function SettingsProfile() {
               disabled={isLoading}
             >
               {isLoading ? t("Saving...") : t("Save")}
+            </EdwButton>
+            <EdwButton
+              type="reset"
+              disabled={isLoading}
+              outline
+              action={handleReset}
+            >
+              {t("Cancel")}
             </EdwButton>
           </div>
         </EdwForm>
