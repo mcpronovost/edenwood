@@ -1,5 +1,5 @@
 import "@/assets/styles/page/_settings.scss";
-import { CircleUser, Cog, Smile, Plus, Minus } from "lucide-react";
+import { CircleUser, Cog, Smile, Plus, Minus, Construction } from "lucide-react";
 import { useRouter } from "@/services/router";
 import { useTranslation } from "@/services/translation";
 import {
@@ -10,6 +10,7 @@ import {
   EdwLink,
 } from "@/components/common";
 import EdwSettingsProfile from "./Profile";
+import EdwSettingsAccount from "./Account";
 
 export default function Settings() {
   const { params } = useRouter();
@@ -111,9 +112,11 @@ export default function Settings() {
           <div className="edw-settings-grid-main">
             {params?.section === "profile" ? (
               <EdwSettingsProfile />
+            ) : params?.section === "account" ? (
+              <EdwSettingsAccount />
             ) : (
               <EdwCard>
-                <EdwFeedback ghost title={t("An error occurred")} />
+                <EdwFeedback ghost variant="warning" title={t("Under construction")} message={t("These settings are currently in development and should be available soon")} icon={Construction} />
               </EdwCard>
             )}
           </div>

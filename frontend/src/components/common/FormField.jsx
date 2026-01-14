@@ -5,6 +5,7 @@ export default function EdwFormField({
   options = [],
   defaultValue,
   required = false,
+  disabled = false,
   onChange,
   hasError,
   block = false,
@@ -58,6 +59,7 @@ export default function EdwFormField({
             defaultValue={defaultValue}
             onChange={onChange}
             required={required}
+            disabled={disabled}
             autoComplete="off"
           />
         )}

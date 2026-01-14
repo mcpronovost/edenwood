@@ -1,5 +1,6 @@
 import React from "react";
 import { AUTH_ROUTES } from "./auth";
+import { SETTINGS_ROUTES } from "./settings";
 import { DEV_ROUTES } from "./dev";
 
 export const ROUTES = [
@@ -46,31 +47,8 @@ export const ROUTES = [
       },
     ],
   },
+  ...SETTINGS_ROUTES,
   ...DEV_ROUTES,
-  {
-    name: "settings",
-    component: React.lazy(() => import("../../../pages/Settings")),
-    paths: {
-      fr: "parametres",
-      en: "settings",
-    },
-    params: {
-      section: "profile"
-    },
-    children: [
-      {
-        name: "settings-profile",
-        component: React.lazy(() => import("../../../pages/Settings")),
-        paths: {
-          fr: "profil",
-          en: "profile",
-        },
-        params: {
-          section: "profile"
-        },
-      },
-    ],
-  },
   {
     name: "404",
     component: React.lazy(() => import("../../../pages/Error404")),

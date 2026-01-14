@@ -34,7 +34,7 @@
         background-color: var(--edw-card-item-bg);
         border: 1px solid var(--edw-card-item-bg);
         border-radius: var(--edw-radius);
-        color: var(--edw-card-fg);
+        color: var(--edw-card-item-fg);
         font-family: "Google Sans Flex", sans-serif;
         font-size: 0.875rem;
         width: 100%;
@@ -51,8 +51,12 @@
         }
   
         &::placeholder {
-          color: var(--edw-core-fg);
+          color: var(--edw-card-item-fg);
           opacity: 0.6;
+        }
+
+        &:disabled {
+          color: var(--edw-card-item-subtle);
         }
       }
   

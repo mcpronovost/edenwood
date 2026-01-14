@@ -16,7 +16,9 @@ export default function SettingsProfile() {
   const [profileForm, setProfileForm] = useState({
     avatar: currentUser.avatar,
     cover: currentUser.cover,
-    name: currentUser.name
+    name: currentUser.name,
+    slug: currentUser.slug,
+    abbr: currentUser.abbr
   });
 
   const handleChange = (e) => {
@@ -139,8 +141,8 @@ export default function SettingsProfile() {
         </div>
       </article>
       <EdwCard>
-        <EdwForm className="edw-settings-profile-form" isLoading={isLoading}>
-          <h2 className="edw-settings-profile-form-title">{t("Your Profile")}</h2>
+        <EdwForm className="edw-settings-form" isLoading={isLoading}>
+          <h2 className="edw-settings-form-title">{t("Your Profile")}</h2>
           <EdwFormField
             label={t("Public Name")}
             name="name"
@@ -151,6 +153,28 @@ export default function SettingsProfile() {
           />
           {hasError?.name && (
             <EdwFormMessage hasError={hasError?.name} />
+          )}
+          <EdwFormField
+            label={t("Slug")}
+            name="slug"
+            defaultValue={profileForm.slug}
+            onChange={handleChange}
+            hasError={hasError?.fields?.slug}
+            disabled
+          />
+          {hasError?.slug && (
+            <EdwFormMessage hasError={hasError?.slug} />
+          )}
+          <EdwFormField
+            label={t("Abbreviation")}
+            name="abbr"
+            defaultValue={profileForm.abbr}
+            onChange={handleChange}
+            hasError={hasError?.fields?.abbr}
+            disabled
+          />
+          {hasError?.abbr && (
+            <EdwFormMessage hasError={hasError?.abbr} />
           )}
           <div className="edw-form-actions">
             <EdwButton
