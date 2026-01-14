@@ -116,7 +116,7 @@ export default function Settings() {
               <EdwSettingsAccount />
             ) : (
               <EdwCard>
-                <EdwFeedback ghost variant="warning" title={t("Under construction")} message={t("These settings are currently in development and should be available soon")} icon={Construction} />
+                <EdwFeedback ghost variant="warning" title={t("Under Construction")} message={t("These settings are currently in development and should be available soon")} icon={Construction} />
               </EdwCard>
             )}
           </div>
