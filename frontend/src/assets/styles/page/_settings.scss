@@ -81,18 +81,22 @@
           transition: color 0.3s;
           padding: 4px 35px;
 
-          &.edw-active {
-            background-color: var(--edw-card-item-bg);
-            border-radius: var(--edw-radius);
-            color: var(--edw-card-item-fg);
-          }
-
           &:hover {
             color: var(--edw-c-primary);
           }
 
           &:active {
             opacity: 0.7;
+          }
+
+          &.edw-active {
+            background-color: var(--edw-card-item-bg);
+            border-radius: var(--edw-radius);
+            color: var(--edw-c-primary);
+
+            &:hover {
+              color: var(--edw-card-item-fg);
+            }
           }
         }
       }
