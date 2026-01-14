@@ -19,6 +19,21 @@ class EdwAuthMeView(APIView):
         )
 
 
+class EdwAuthMeAccountView(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, request, *args, **kwargs):
+        data = {
+            "username": f"{request.user.username}",
+            "email": f"{request.user.email}"
+        }
+        return Response(
+            {
+                "account": data,
+            }
+        )
+
+
 class EdwAuthMeEditView(APIView):
     permission_classes = (IsAuthenticated,)
 
