@@ -33,8 +33,8 @@ export default function AppSidebar() {
       <footer className="edw-app-sidebar-footer">
         <nav className="edw-app-sidebar-nav">
           <ul className="edw-app-sidebar-nav-list">
-            <EdwAppSidebarNavItem icon={Settings} text={t("Settings")} href="settings" />
-            <EdwAppSidebarNavItem icon={Blocks} text={t("Components")} href="dev-components" />
+            {isAuth && (<EdwAppSidebarNavItem icon={Settings} text={t("Settings")} href="settings" />)}
+            {isAuth && (<EdwAppSidebarNavItem icon={Blocks} text={t("Components")} href="dev-components" />)}
           </ul>
         </nav>
       </footer>

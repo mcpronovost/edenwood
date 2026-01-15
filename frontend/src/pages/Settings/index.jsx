@@ -1,5 +1,6 @@
 import "@/assets/styles/page/_settings.scss";
-import { CircleUser, Cog, Smile, Plus, Minus, Construction } from "lucide-react";
+import { CircleUser, Cog, Smile, Construction } from "lucide-react";
+import { useAuth } from "@/services/auth";
 import { useRouter } from "@/services/router";
 import { useTranslation } from "@/services/translation";
 import {
@@ -9,10 +10,12 @@ import {
   EdwHeading,
   EdwLink,
 } from "@/components/common";
+import EdwError404 from "@/pages/Error404";
 import EdwSettingsProfile from "./Profile";
 import EdwSettingsAccount from "./Account";
 
 export default function Settings() {
+  const { isAuth } = useAuth();
   const { params } = useRouter();
   const { t } = useTranslation();
 
@@ -66,6 +69,10 @@ export default function Settings() {
     },
   ];
 
+  if (!isAuth) {
+    return <EdwError404 />;
+  }
+
   return (
     <section className="edw-page edw-settings">
       <EdwHeading title={t("Settings")} />
@@ -87,9 +94,6 @@ export default function Settings() {
                         <small className="edw-settings-nav-header-title-desc">
                           {m.description}
                         </small>
-                      </span>
-                      <span className="edw-settings-nav-header-toggle">
-                        <Plus size={20} />
                       </span>
                     </header>
                     <ul className="edw-settings-nav-menu">
