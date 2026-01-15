@@ -28,11 +28,11 @@ export default function SettingsAccount() {
   });
   const [accountForm, setAccountForm] = useState(initialAccountForm);
 
-  const fetchAccountData = async () => {
+  const fetchAccountData = async (signal) => {
     setIsLoading(true);
     setHasError(null);
     try {
-      const result = await api.get("/auth/me/account/");
+      const result = await api.get("/auth/me/account/", { signal });
       if (!result.success || !result.account) throw Error();
       setInitialAccountForm((prev) => ({
         ...prev,
@@ -44,12 +44,17 @@ export default function SettingsAccount() {
         username: result.account.username,
         email: result.account.email,
       }));
-    } catch {
+    } catch (e) {
+      // Ignore abort errors
+      if (e?.name === "AbortError") return;
       setHasError({
         form: t("An error occurred"),
       });
     } finally {
-      setIsLoading(false);
+      // Avoid state update after unmount
+      if (!signal.aborted) {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -82,7 +87,13 @@ export default function SettingsAccount() {
   };
 
   useEffect(() => {
-    fetchAccountData();
+    const controller = new AbortController();
+
+    fetchAccountData(controller.signal);
+
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   return (
