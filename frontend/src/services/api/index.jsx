@@ -34,7 +34,10 @@ class EdwApi {
       });
 
       if (!response.ok) {
-        if ((url.endsWith("logout/") || url.endsWith("logoutall/")) && response.status === 401) {
+        if (
+          (url.endsWith("logout/") || url.endsWith("logoutall/")) &&
+          response.status === 401
+        ) {
           return {
             success: true,
           };
@@ -65,35 +68,44 @@ class EdwApi {
     }
   }
 
-  get(endpoint) {
-    return this.request(endpoint, { method: "GET" });
+  get(endpoint, options = {}) {
+    return this.request(endpoint, {
+      method: "GET",
+      ...options,
+    });
   }
 
-  post(endpoint, data) {
+  post(endpoint, data, options = {}) {
     const body = data instanceof FormData ? data : JSON.stringify(data);
     return this.request(endpoint, {
       method: "POST",
       body,
+      ...options,
     });
   }
 
-  put(endpoint, data) {
+  put(endpoint, data, options = {}) {
     return this.request(endpoint, {
       method: "PUT",
       body: JSON.stringify(data),
+      ...options,
     });
   }
 
-  patch(endpoint, data) {
+  patch(endpoint, data, options = {}) {
     const body = data instanceof FormData ? data : JSON.stringify(data);
     return this.request(endpoint, {
       method: "PATCH",
       body,
+      ...options,
     });
   }
 
-  delete(endpoint) {
-    return this.request(endpoint, { method: "DELETE" });
+  delete(endpoint, options = {}) {
+    return this.request(endpoint, {
+      method: "DELETE",
+      ...options,
+    });
   }
 
   async login(data) {
