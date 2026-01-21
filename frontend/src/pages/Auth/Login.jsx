@@ -5,12 +5,12 @@ import { useRouter } from "@/services/router";
 import { useTranslation } from "@/services/translation";
 import { validateUsername, validatePassword } from "@/utils";
 import {
-  EdwButton,
-  EdwCard,
-  EdwForm,
-  EdwFormField,
-  EdwFormMessage,
-  EdwLink,
+  OykButton,
+  OykCard,
+  OykForm,
+  OykFormField,
+  OykFormMessage,
+  OykLink,
 } from "@/components/common";
 
 export default function Login() {
@@ -58,7 +58,7 @@ export default function Login() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async () => {
     setIsLoading(true);
     setHasError(null);
     if (!validateForm()) {
@@ -66,43 +66,42 @@ export default function Login() {
       return;
     }
     try {
-      const result = await api.login(formData);
-      if (result.token) {
-        setRat(result.token);
-        setUser(result.user);
-        n("home");
-      } else {
-        throw new Error();
-      }
+      const r = await api.login(formData);
+      if (!r.ok) throw new Error(r.error || t("An error occurred"));
+      setRat(r.token);
+      setUser(r.user);
+      n("home");
     } catch (e) {
-      setHasError(e.error || t("An error occurred"));
+      setHasError(() => ({
+        message: e.message || t("An error occurred")
+      }));
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <section className="edw-page edw-auth">
-      <div className="edw-auth-container">
-        <div className="edw-auth-header">
-          <h1 className="edw-auth-header-title">
+    <section className="oyk-page oyk-auth">
+      <div className="oyk-auth-container">
+        <div className="oyk-auth-header">
+          <h1 className="oyk-auth-header-title">
             {t("Sign in to your account")}
           </h1>
-          <p className="edw-auth-header-subtitle">
+          <p className="oyk-auth-header-subtitle">
             {t("Or")}{" "}
-            <EdwLink routeName="register" className="edw-auth-header-subtitle">
+            <OykLink routeName="register" className="oyk-auth-header-subtitle">
               {t("create a new account")}
-            </EdwLink>
+            </OykLink>
           </p>
         </div>
 
-        <EdwCard>
-          <EdwForm
-            className="edw-auth-form"
+        <OykCard>
+          <OykForm
+            className="oyk-auth-form"
             onSubmit={handleSubmit}
             isLoading={isLoading}
           >
-            <EdwFormField
+            <OykFormField
               label={t("Username")}
               name="username"
               defaultValue={formData.username}
@@ -111,7 +110,7 @@ export default function Login() {
               required
               block
             />
-            <EdwFormField
+            <OykFormField
               label={t("Password")}
               name="password"
               type="password"
@@ -122,20 +121,20 @@ export default function Login() {
               block
             />
             {hasError?.message && (
-              <EdwFormMessage hasError={hasError?.message} />
+              <OykFormMessage hasError={hasError?.message} />
             )}
-            <div className="edw-form-actions">
-              <EdwButton
+            <div className="oyk-form-actions">
+              <OykButton
                 type="submit"
                 color="primary"
                 disabled={isLoading}
                 block
               >
                 {isLoading ? t("Signing in...") : t("Sign in")}
-              </EdwButton>
+              </OykButton>
             </div>
-          </EdwForm>
-        </EdwCard>
+          </OykForm>
+        </OykCard>
       </div>
     </section>
   );

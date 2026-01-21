@@ -1,6 +1,6 @@
 import { useAuth } from "@/services/auth";
 import { useStore } from "@/services/store";
-import { EdwBanner } from "@/components/common";
+import { OykBanner } from "@/components/common";
 
 export default function User() {
   const { currentUser } = useAuth();
@@ -11,11 +11,11 @@ export default function User() {
   }
 
   return (
-    <section className="edw-app-sidebar-user">
-      <EdwBanner
+    <section className="oyk-app-sidebar-user">
+      <OykBanner
         avatarSrc={currentUser.avatar}
         avatarBorderSize={4}
-        avatarBorderColor="var(--edw-app-sidebar-bg)"
+        avatarBorderColor="var(--oyk-app-sidebar-bg)"
         avatarSize={storeAppSidebarOpen ? 96 : 32}
         avatarTop={storeAppSidebarOpen ? 24 : 12}
         coverSrc={currentUser.cover}
@@ -23,11 +23,11 @@ export default function User() {
         coverRadius="0"
         height={storeAppSidebarOpen ? 132 : 64}
       />
-      <section className={`edw-app-sidebar-user-identity ${storeAppSidebarOpen ? '' : 'hidden'}`}>
-        <div className="edw-app-sidebar-user-identity-name">
+      <section className={`oyk-app-sidebar-user-identity ${storeAppSidebarOpen ? '' : 'hidden'}`}>
+        <div className="oyk-app-sidebar-user-identity-name">
             {currentUser.name}
         </div>
-        <div className="edw-app-sidebar-user-identity-title">
+        <div className="oyk-app-sidebar-user-identity-title">
             Qui ne fait que passer
         </div>
       </section>

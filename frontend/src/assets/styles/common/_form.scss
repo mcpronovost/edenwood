@@ -1,4 +1,4 @@
-.edw-form {
+.oyk-form {
   &-field {
     display: flex;
     flex-direction: row;
@@ -6,7 +6,7 @@
     margin-bottom: 16px;
 
     &-label {
-      color: var(--edw-card-fg);
+      color: var(--oyk-card-fg);
       font-size: 0.9rem;
       font-weight: 500;
       display: block;
@@ -14,8 +14,8 @@
       width: 150px;
       padding: 12px 0;
 
-      .edw-form-field-required {
-        color: var(--edw-c-danger);
+      .oyk-form-field-required {
+        color: var(--oyk-c-danger);
         display: inline-block;
         margin-left: 4px;
       }
@@ -31,32 +31,32 @@
       width: 100%;
 
       input, textarea, select {
-        background-color: var(--edw-card-item-bg);
-        border: 1px solid var(--edw-card-item-bg);
-        border-radius: var(--edw-radius);
-        color: var(--edw-card-item-fg);
-        font-family: "Google Sans Flex", sans-serif;
+        background-color: var(--oyk-card-item-bg);
+        border: 1px solid var(--oyk-card-item-bg);
+        border-radius: var(--oyk-radius);
+        color: var(--oyk-card-item-fg);
+        font-family: "Work Sans", sans-serif;
         font-size: 0.875rem;
         width: 100%;
         padding: 12px;
         transition: border-color 0.2s ease;
   
         &:focus {
-          border-color: var(--edw-c-primary);
+          border-color: var(--oyk-c-primary);
           outline: none;
         }
   
         &--error {
-          border-color: var(--edw-c-danger);
+          border-color: var(--oyk-c-danger);
         }
   
         &::placeholder {
-          color: var(--edw-card-item-fg);
+          color: var(--oyk-card-item-fg);
           opacity: 0.6;
         }
 
         &:disabled {
-          color: var(--edw-card-item-subtle);
+          color: var(--oyk-card-item-subtle);
         }
       }
   
@@ -69,6 +69,7 @@
       &-radio {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: flex-start;
         gap: 8px;
@@ -82,15 +83,15 @@
           display: flex;
 
           input[type="radio"]:checked + &-btn {
-            background-color: color-mix(in srgb, var(--edw-c-primary) 20%, transparent);
-            border-color: color-mix(in srgb, var(--edw-c-primary) 40%, transparent);
-            color: var(--edw-c-primary-fg);
+            background-color: color-mix(in srgb, var(--oyk-c-primary) 20%, transparent);
+            border-color: color-mix(in srgb, var(--oyk-c-primary) 40%, transparent);
+            color: var(--oyk-c-primary-fg);
           }
 
           &-btn {
-            background-color: var(--edw-card-item-bg);
-            border: 1px solid var(--edw-card-item-bg);
-            border-radius: var(--edw-radius);
+            background-color: var(--oyk-card-item-bg);
+            border: 1px solid var(--oyk-card-item-bg);
+            border-radius: var(--oyk-radius);
             font-size: 0.875rem;
             font-weight: 500;
             cursor: pointer;
@@ -101,7 +102,7 @@
     }
 
     &-error {
-      color: var(--edw-c-danger);
+      color: var(--oyk-c-danger);
       font-size: 0.875rem;
       font-weight: 500;
       display: block;
@@ -111,7 +112,7 @@
     &--block {
       flex-direction: column;
 
-      .edw-form-field-label {
+      .oyk-form-field-label {
         flex: 0 0 auto;
         width: 100%;
         padding: 0;

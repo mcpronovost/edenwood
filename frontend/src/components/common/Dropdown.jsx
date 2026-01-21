@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, forwardRef, useImperativeHandle } from "react";
 
-const EdwDropdown = forwardRef(({ toggle, menu, direction = "left", disabled = false }, ref) => {
+const OykDropdown = forwardRef(({ toggle, menu, direction = "left", disabled = false }, ref) => {
   const dropdownRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,28 +38,28 @@ const EdwDropdown = forwardRef(({ toggle, menu, direction = "left", disabled = f
   }, []);
 
   return (
-    <div ref={dropdownRef} className="edw-dropdown">
+    <div ref={dropdownRef} className="oyk-dropdown">
       <div
-        className={`edw-dropdown-toggle ${disabled || !menu || menu.length === 0 ? "disabled" : ""}`}
+        className={`oyk-dropdown-toggle ${disabled || !menu || menu.length === 0 ? "disabled" : ""}`}
         onClick={() => handleToggle()}
       >
         {toggle}
       </div>
       {isOpen && (
-        <div className={`edw-dropdown-menu direction-${direction}`}>
+        <div className={`oyk-dropdown-menu direction-${direction}`}>
           {menu.map((item, index) => (
-            <div key={index} className="edw-dropdown-item">
+            <div key={index} className="oyk-dropdown-item">
               {item.divider ? (
-                <div className="edw-dropdown-item-divider" />
+                <div className="oyk-dropdown-item-divider" />
               ) : item.element ? (
                 item.element
               ) : (
                 <button
-                  className="edw-dropdown-item-btn"
+                  className="oyk-dropdown-item-btn"
                   onClick={() => handleMenuClick(item.onClick)}
                   disabled={item.disabled}
                   style={
-                    item.color ? { color: item.color.startsWith("#") ? item.color : `var(--edw-c-${item.color})` } : {}
+                    item.color ? { color: item.color.startsWith("#") ? item.color : `var(--oyk-c-${item.color})` } : {}
                   }
                 >
                   {item.icon && <span className="icon">{item.icon}</span>}
@@ -74,6 +74,6 @@ const EdwDropdown = forwardRef(({ toggle, menu, direction = "left", disabled = f
   );
 });
 
-EdwDropdown.displayName = "EdwDropdown";
+OykDropdown.displayName = "OykDropdown";
 
-export default EdwDropdown;
+export default OykDropdown;

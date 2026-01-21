@@ -1,7 +1,7 @@
 export default function AppLoading() {
   return (
-    <div className="edw-app-loading">
-      <div className="edw-app-loading-bar">
+    <div className="oyk-app-loading">
+      <div className="oyk-app-loading-bar">
         Loading...
       </div>
     </div>

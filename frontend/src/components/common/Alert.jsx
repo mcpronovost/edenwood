@@ -1,6 +1,6 @@
 import { Info, CircleCheck, CircleX, ShieldAlert } from "lucide-react";
 
-export default function EdwAlert({
+export default function OykAlert({
   children,
   title,
   message,
@@ -10,9 +10,9 @@ export default function EdwAlert({
   iconSize = 24,
 }) {
   return (
-    <div className={`edw-alert edw-alert-variant-${variant}`}>
+    <div className={`oyk-alert oyk-alert-variant-${variant}`}>
       {showIcon && (
-        <div className="edw-alert-icon">
+        <div className="oyk-alert-icon">
           {IconComponent ? (
             <IconComponent size={iconSize} />
           ) : variant === "danger" ? (
@@ -26,9 +26,9 @@ export default function EdwAlert({
           )}
         </div>
       )}
-      <div className="edw-alert-content">
-        {title && <p className="edw-alert-content-title">{title}</p>}
-        {message && <p className="edw-alert-content-message">{message}</p>}
+      <div className="oyk-alert-content">
+        {title && <p className="oyk-alert-content-title">{title}</p>}
+        {message && <p className="oyk-alert-content-message">{message}</p>}
         {children}
       </div>
     </div>

@@ -1,4 +1,4 @@
-export default function EdwForm({ children, onSubmit, isLoading, ...props }) {
+export default function OykForm({ children, onSubmit, isLoading, ...props }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -8,7 +8,7 @@ export default function EdwForm({ children, onSubmit, isLoading, ...props }) {
   };
 
   return (
-    <form className="edw-form" onSubmit={handleSubmit} disabled={isLoading} {...props}>
+    <form className="oyk-form" onSubmit={handleSubmit} disabled={isLoading} {...props}>
       {children}
     </form>
   );

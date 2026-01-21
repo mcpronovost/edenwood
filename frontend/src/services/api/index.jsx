@@ -1,8 +1,8 @@
-import { API_URL, API_HEADERS, edwEncode, edwDecode } from "./utils";
+import { API_URL, API_HEADERS, oykEncode, oykDecode } from "./utils";
 import { KEY_USER, KEY_RAT } from "@/services/store/constants";
 import { storeGet, storeRemove } from "@/services/store/utils";
 
-class EdwApi {
+class OykApi {
   get lang() {
     return window.document.documentElement.lang;
   }
@@ -24,7 +24,7 @@ class EdwApi {
     }
 
     if (this.token) {
-      headers.Authorization = `Edw ${this.token}`;
+      headers.Authorization = `Oyk ${this.token}`;
     }
 
     try {
@@ -35,8 +35,7 @@ class EdwApi {
 
       if (!response.ok) {
         if (
-          (url.endsWith("logout/") || url.endsWith("logoutall/")) &&
-          response.status === 401
+          (url.endsWith("logout/") || url.endsWith("logoutall/"))
         ) {
           return {
             success: true,
@@ -45,7 +44,11 @@ class EdwApi {
         let errorMsg = `HTTP error! status: ${response.status}`;
         try {
           const errorData = await response.json();
-          errorMsg = JSON.stringify(errorData);
+          if (errorData.error && errorData.error === "42S02") {
+            errorMsg = "An internal error occurred, please contact an administrator";
+          } else {
+            errorMsg = errorData.error || JSON.stringify(errorData);
+          }
         } catch (err) {
           errorMsg = `HTTP error! status: ${response.status}`;
         }
@@ -126,5 +129,5 @@ class EdwApi {
   }
 }
 
-export const api = new EdwApi();
-export { edwEncode, edwDecode };
+export const api = new OykApi();
+export { oykEncode, oykDecode };

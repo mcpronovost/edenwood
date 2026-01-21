@@ -1,7 +1,7 @@
 import { useRef } from "react";
-import { Stone } from "lucide-react";
+import { SquircleDashed  } from "lucide-react";
 import { useStore } from "@/services/store";
-import { EdwLink, EdwDropdown } from "@/components/common";
+import { OykLink, OykDropdown } from "@/components/common";
 
 export default function Header() {
   const { currentUser } = useStore();
@@ -9,16 +9,16 @@ export default function Header() {
   const dropdownRef = useRef(null);
 
   return (
-    <header className="edw-app-sidebar-header">
-      <EdwDropdown
+    <header className="oyk-app-sidebar-header">
+      <OykDropdown
         ref={dropdownRef}
         toggle={
-          <EdwLink routeName="home" className="edw-app-sidebar-header-button">
-            <span className="edw-app-sidebar-header-button-logo">
-              <Stone size={18} color="var(--edw-c-primary-fg)" />
+          <OykLink routeName="home" className="oyk-app-sidebar-header-button">
+            <span className="oyk-app-sidebar-header-button-logo">
+              <SquircleDashed  size={18} color="var(--oyk-c-primary-fg)" />
             </span>
-            <span className="edw-app-sidebar-header-button-brand">Edenwood</span>
-          </EdwLink>
+            <span className="oyk-app-sidebar-header-button-brand">Edenwood</span>
+          </OykLink>
         }
         direction="full"
         disabled={!currentUser}

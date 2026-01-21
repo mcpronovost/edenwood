@@ -1,5 +1,5 @@
-.edw-chip {
-  background-color: color-mix(in srgb, var(--edw-core-fg) 10%, transparent);
+.oyk-chip {
+  background-color: color-mix(in srgb, var(--oyk-core-fg) 10%, transparent);
   border-radius: 4px;
   font-size: 11px;
   line-height: 1.2;
@@ -14,16 +14,16 @@
 
   &-outline {
     background-color: transparent !important;
-    border: 1px solid color-mix(in srgb, var(--edw-core-fg) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--oyk-core-fg) 10%, transparent);
     padding: 3px 6px;
 
-    .edw-chip-content {
+    .oyk-chip-content {
       // filter: brightness(1);
     }
   }
 
   &-content {
-    color: var(--edw-core-fg);
+    color: var(--oyk-core-fg);
     text-overflow: ellipsis;
     overflow: hidden;
     display: inline-block;
@@ -31,48 +31,48 @@
     // filter: brightness(1.8);
   }
 
-  &.edw-chip-default {
-    background-color: color-mix(in srgb, var(--edw-core-fg) 20%, transparent);
-    border-color: color-mix(in srgb, var(--edw-core-fg) 30%, transparent);
+  &.oyk-chip-default {
+    background-color: color-mix(in srgb, var(--oyk-core-fg) 20%, transparent);
+    border-color: color-mix(in srgb, var(--oyk-core-fg) 30%, transparent);
 
-    .edw-chip-content {
-      color: var(--edw-core-fg);
+    .oyk-chip-content {
+      color: var(--oyk-core-fg);
     }
   }
 
-  &.edw-chip-primary {
-    background-color: color-mix(in srgb, var(--edw-c-primary) 20%, transparent);
-    border-color: color-mix(in srgb, var(--edw-c-primary) 50%, transparent);
+  &.oyk-chip-primary {
+    background-color: color-mix(in srgb, var(--oyk-c-primary) 20%, transparent);
+    border-color: color-mix(in srgb, var(--oyk-c-primary) 50%, transparent);
 
-    .edw-chip-content {
-      color: var(--edw-c-primary);
+    .oyk-chip-content {
+      color: var(--oyk-c-primary);
     }
   }
 
-  &.edw-chip-danger {
-    background-color: color-mix(in srgb, var(--edw-c-danger) 20%, transparent);
-    border-color: color-mix(in srgb, var(--edw-c-danger) 50%, transparent);
+  &.oyk-chip-danger {
+    background-color: color-mix(in srgb, var(--oyk-c-danger) 20%, transparent);
+    border-color: color-mix(in srgb, var(--oyk-c-danger) 50%, transparent);
 
-    .edw-chip-content {
-      color: var(--edw-c-danger);
+    .oyk-chip-content {
+      color: var(--oyk-c-danger);
     }
   }
 
-  &.edw-chip-warning {
-    background-color: color-mix(in srgb, var(--edw-c-warning) 20%, transparent);
-    border-color: color-mix(in srgb, var(--edw-c-warning) 50%, transparent);
+  &.oyk-chip-warning {
+    background-color: color-mix(in srgb, var(--oyk-c-warning) 20%, transparent);
+    border-color: color-mix(in srgb, var(--oyk-c-warning) 50%, transparent);
 
-    .edw-chip-content {
-      color: var(--edw-c-warning);
+    .oyk-chip-content {
+      color: var(--oyk-c-warning);
     }
   }
 
-  &.edw-chip-success {
-    background-color: color-mix(in srgb, var(--edw-c-success) 20%, transparent);
-    border-color: color-mix(in srgb, var(--edw-c-success) 50%, transparent);
+  &.oyk-chip-success {
+    background-color: color-mix(in srgb, var(--oyk-c-success) 20%, transparent);
+    border-color: color-mix(in srgb, var(--oyk-c-success) 50%, transparent);
 
-    .edw-chip-content {
-      color: var(--edw-c-success);
+    .oyk-chip-content {
+      color: var(--oyk-c-success);
     }
   }
 }

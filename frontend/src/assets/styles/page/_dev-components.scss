@@ -1,5 +1,5 @@
-.edw-components {
-  .edw-components-list {
+.oyk-components {
+  .oyk-components-list {
     display: block;
 
     &-item {
@@ -26,7 +26,7 @@
     }
   }
 
-  .edw-components-api-table {
+  .oyk-components-api-table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
@@ -34,7 +34,7 @@
 
     &-head {
       th {
-        border-bottom: 1px solid var(--edw-core-divider);
+        border-bottom: 1px solid var(--oyk-core-divider);
         font-weight: 600;
         padding: 8px;
       }
@@ -42,7 +42,7 @@
 
     &-body {
       td {
-        border-bottom: 1px solid var(--edw-core-divider);
+        border-bottom: 1px solid var(--oyk-core-divider);
         font-weight: 400;
         padding: 8px;
       }

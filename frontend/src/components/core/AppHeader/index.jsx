@@ -1,10 +1,10 @@
 import { ArrowLeftFromLine, ArrowRightFromLine } from "lucide-react";
 import { useAuth } from "@/services/auth";
 import { useStore } from "@/services/store";
-import EdwAppHeaderMenu from "./Menu";
-import EdwAppHeaderNotifications from "./Notifications";
-import EdwAppHeaderAuth from "./Auth";
-import EdwAppHeaderUser from "./User";
+import OykAppHeaderMenu from "./Menu";
+import OykAppHeaderNotifications from "./Notifications";
+import OykAppHeaderAuth from "./Auth";
+import OykAppHeaderUser from "./User";
 
 export default function AppHeader() {
   const { isAuth } = useAuth();
@@ -15,15 +15,15 @@ export default function AppHeader() {
   };
 
   return (
-    <header className="edw-app-header">
-      <section className="edw-app-header-toggle">
-        <button className="edw-app-header-toggle-button" onClick={handleToggleSidebar}>
+    <header className="oyk-app-header">
+      <section className="oyk-app-header-toggle">
+        <button className="oyk-app-header-toggle-button" onClick={handleToggleSidebar}>
           {storeAppSidebarOpen ? <ArrowLeftFromLine size={18} /> : <ArrowRightFromLine size={18} />}
         </button>
       </section>
-      <EdwAppHeaderMenu />
-      <EdwAppHeaderNotifications />
-      <section className="edw-app-header-user">{isAuth ? <EdwAppHeaderUser /> : <EdwAppHeaderAuth />}</section>
+      <OykAppHeaderMenu />
+      <OykAppHeaderNotifications />
+      <section className="oyk-app-header-user">{isAuth ? <OykAppHeaderUser /> : <OykAppHeaderAuth />}</section>
     </header>
   );
 }

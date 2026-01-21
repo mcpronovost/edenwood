@@ -1,22 +1,22 @@
-.edw-app-sidebar {
-  background-color: var(--edw-app-sidebar-bg, #0e120f);
-  color: var(--edw-app-sidebar-fg, #FFFFFF);
-  flex: 0 1 var(--edw-app-sidebar-width, 64px);
+.oyk-app-sidebar {
+  background-color: var(--oyk-app-sidebar-bg, #0e120f);
+  color: var(--oyk-app-sidebar-fg, #FFFFFF);
+  flex: 0 1 var(--oyk-app-sidebar-width, 64px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: flex-basis 0.3s;
 
   &.open {
-    flex-basis: var(--edw-app-sidebar-width-open);
+    flex-basis: var(--oyk-app-sidebar-width-open);
 
-    .edw-app-sidebar-header-button-brand {
+    .oyk-app-sidebar-header-button-brand {
       width: auto;
       opacity: 1;
       padding-left: 12px;
     }
 
-    .edw-app-sidebar-nav-item {
+    .oyk-app-sidebar-nav-item {
       &-link {
         gap: 8px;
 
@@ -39,16 +39,22 @@
     }
   }
 
+  &-scrollbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   &-header {
-    background-color: var(--edw-app-bar-bg);
-    color: var(--edw-app-bar-fg);
+    background-color: var(--oyk-app-bar-bg);
+    color: var(--oyk-app-bar-fg);
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: flex-start;
-    height: var(--edw-app-bar-height);
+    height: var(--oyk-app-bar-height);
 
-    .edw-dropdown {
+    .oyk-dropdown {
       flex: 1;
       padding: 8px;
     }
@@ -63,7 +69,7 @@
       width: 100%;
 
       &-logo {
-        background-color: var(--edw-c-primary);
+        background-color: var(--oyk-c-primary);
         border-radius: 4px;
         display: flex;
         flex: 0 0 32px;
@@ -99,7 +105,7 @@
         padding: 8px;
 
         &:not(.disabled):hover {
-          background-color: var(--edw-app-sidebar-bg-subtle);
+          background-color: var(--oyk-app-sidebar-bg-subtle);
         }
 
         &:not(.disabled):active {
@@ -107,7 +113,7 @@
         }
 
         &-logo {
-          background-color: var(--edw-c-primary);
+          background-color: var(--oyk-c-primary);
           border-radius: 4px;
           display: flex;
           flex: 0 0 32px;
@@ -167,8 +173,8 @@
       }
 
       &.hidden {
-        .edw-app-sidebar-user-identity-name,
-        .edw-app-sidebar-user-identity-title {
+        .oyk-app-sidebar-user-identity-name,
+        .oyk-app-sidebar-user-identity-title {
           font-size: 0;
           line-height: 0;
           opacity: 0;
@@ -184,7 +190,7 @@
 
   &-nav {
     &-list + &-list {
-      border-top: 1px solid var(--edw-app-sidebar-bg-subtle);
+      border-top: 1px solid var(--oyk-app-sidebar-bg-subtle);
       margin-top: 16px;
       padding-top: 16px;
     }
@@ -194,7 +200,7 @@
 
       &-link {
         background-color: transparent;
-        border-radius: var(--edw-radius);
+        border-radius: var(--oyk-radius);
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -207,7 +213,7 @@
         transition: background-color 0.3s, gap 0.3s;
 
         &:not(.disabled):hover {
-          background-color: var(--edw-app-sidebar-bg-subtle);
+          background-color: var(--oyk-app-sidebar-bg-subtle);
         }
 
         &:not(.disabled):active {
@@ -247,7 +253,7 @@
         }
 
         &-side-icon {
-          background-color: var(--edw-app-sidebar-bg);
+          background-color: var(--oyk-app-sidebar-bg);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -260,7 +266,7 @@
         }
 
         &-side-chip {
-          background-color: var(--edw-app-sidebar-bg);
+          background-color: var(--oyk-app-sidebar-bg);
           line-height: 1;
           display: flex;
           align-items: center;

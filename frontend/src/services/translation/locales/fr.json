@@ -21,7 +21,7 @@
     "Password": "Mot de passe",
     "Sign In": "Connexion",
     "Sign in": "Se connecter",
-    "Sign in to your account": "Connectez-vous à votre compte",
+    "Sign in to your account": "Connectez-vous",
     "Or": "Ou",
     "create a new account": "créez un nouveau compte",
     "Signing in...": "Connexion en cours...",
@@ -29,6 +29,7 @@
     "Edit": "Modifier",
     "Save": "Enregistrer",
     "Cancel": "Annuler",
+    "Delete": "Supprimer",
     "Under Construction": "En construction",
     "This page is currently under construction. Please check back later.": "Cette page est actuellement en construction. Veuillez revenir plus tard.",
     "These settings are currently in development and should be available soon": "Ces paramètres sont en cours de développement et devraient être disponibles sous peu.",
@@ -47,5 +48,14 @@
     "Manage friends and accept invites": "Gérer vos amis et accepter les invitations",
     "Change Avatar": "Modifier l'avatar",
     "Change Cover": "Modifier la couverture",
-    "Unable to access account data, check your internet connection or try again later": "Impossible d'accéder aux données de votre compte. Veuillez vérifier votre connexion internet ou réessayer plus tard."
+    "Unable to access account data, check your internet connection or try again later": "Impossible d'accéder aux données de votre compte. Veuillez vérifier votre connexion internet ou réessayer plus tard.",
+    "Priority": "Priorité",
+    "PriorityHigh": "Élevé",
+    "PriorityMedium": "Moyen",
+    "PriorityLow": "Faible",
+    "Title": "Titre",
+    "Content": "Contenu",
+    "Status": "Statut",
+    "Colour": "Couleur",
+    "Position": "Position"
 }

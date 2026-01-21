@@ -4,7 +4,7 @@ import { api } from "@/services/api";
 import { useAuth } from "@/services/auth";
 import { useRouter } from "@/services/router";
 import { useTranslation } from "@/services/translation";
-import { EdwAvatar, EdwDropdown } from "@/components/common";
+import { OykAvatar, OykDropdown } from "@/components/common";
 
 export default function AppHeaderUser() {
   const { currentUser, setUser, setRat } = useAuth();
@@ -22,12 +22,12 @@ export default function AppHeaderUser() {
   };
 
   return (
-    <section className="edw-app-header-user">
-      <EdwDropdown
+    <section className="oyk-app-header-user">
+      <OykDropdown
         toggle={
-          <button className="edw-app-header-user-button">
-            <span className="edw-app-header-user-button-name">{currentUser.name}</span>
-            <EdwAvatar size={36} src={currentUser.avatar} name={currentUser.name} abbr={currentUser.abbr} />
+          <button className="oyk-app-header-user-button">
+            <span className="oyk-app-header-user-button-name">{currentUser.name}</span>
+            <OykAvatar size={36} src={currentUser.avatar} name={currentUser.name} abbr={currentUser.abbr} />
           </button>
         }
         menu={[
@@ -47,8 +47,7 @@ export default function AppHeaderUser() {
           {
             label: t("Your tasks"),
             icon: <ListTodo size={18} />,
-            disabled: true,
-            onClick: () => {},
+            onClick: () => n("tasks"),
           },
           {
             divider: true,

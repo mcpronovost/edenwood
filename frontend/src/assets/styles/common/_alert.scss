@@ -1,7 +1,7 @@
-.edw-alert {
-  background-color: color-mix(in srgb, var(--edw-core-fg) 10%, transparent);
-  border: 1px solid color-mix(in srgb, var(--edw-core-fg) 10%, transparent);
-  border-radius: var(--edw-radius);
+.oyk-alert {
+  background-color: color-mix(in srgb, var(--oyk-core-fg) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--oyk-core-fg) 10%, transparent);
+  border-radius: var(--oyk-radius);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9,33 +9,33 @@
   padding: 16px;
 
   &-variant-default {
-    background-color: color-mix(in srgb, var(--edw-core-fg) 10%, transparent);
-    border-color: color-mix(in srgb, var(--edw-core-fg) 20%, transparent);
-    color: var(--edw-core-fg);
+    background-color: color-mix(in srgb, var(--oyk-core-fg) 10%, transparent);
+    border-color: color-mix(in srgb, var(--oyk-core-fg) 20%, transparent);
+    color: var(--oyk-core-fg);
   }
 
   &-variant-primary {
-    background-color: color-mix(in srgb, var(--edw-c-primary) 10%, transparent);
-    border-color: color-mix(in srgb, var(--edw-c-primary) 20%, transparent);
-    color: var(--edw-c-primary);
+    background-color: color-mix(in srgb, var(--oyk-c-primary) 10%, transparent);
+    border-color: color-mix(in srgb, var(--oyk-c-primary) 20%, transparent);
+    color: var(--oyk-c-primary);
   }
 
   &-variant-danger {
-    background-color: color-mix(in srgb, var(--edw-c-danger) 10%, transparent);
-    border-color: color-mix(in srgb, var(--edw-c-danger) 20%, transparent);
-    color: var(--edw-c-danger);
+    background-color: color-mix(in srgb, var(--oyk-c-danger) 10%, transparent);
+    border-color: color-mix(in srgb, var(--oyk-c-danger) 20%, transparent);
+    color: var(--oyk-c-danger);
   }
 
   &-variant-warning {
-    background-color: color-mix(in srgb, var(--edw-c-warning) 10%, transparent);
-    border-color: color-mix(in srgb, var(--edw-c-warning) 20%, transparent);
-    color: var(--edw-c-warning);
+    background-color: color-mix(in srgb, var(--oyk-c-warning) 10%, transparent);
+    border-color: color-mix(in srgb, var(--oyk-c-warning) 20%, transparent);
+    color: var(--oyk-c-warning);
   }
 
   &-variant-success {
-    background-color: color-mix(in srgb, var(--edw-c-success) 10%, transparent);
-    border-color: color-mix(in srgb, var(--edw-c-success) 20%, transparent);
-    color: var(--edw-c-success);
+    background-color: color-mix(in srgb, var(--oyk-c-success) 10%, transparent);
+    border-color: color-mix(in srgb, var(--oyk-c-success) 20%, transparent);
+    color: var(--oyk-c-success);
   }
 
   &-icon {

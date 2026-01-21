@@ -1,11 +1,11 @@
 export default function ComponentApiTableItem({ name, description, type, defaultValue, enumValue }) {
   return (
-    <tr className="edw-components-api-table-item">
+    <tr className="oyk-components-api-table-item">
       <td>{name}</td>
       <td>
         {description}
         {enumValue && enumValue.length > 0 && (
-          <div className="edw-components-api-table-item-enum">
+          <div className="oyk-components-api-table-item-enum">
             {enumValue.map((value) => (
               <code className="small" key={value}>
                 {value}

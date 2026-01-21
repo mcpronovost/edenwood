@@ -1,12 +1,12 @@
-.edw-app-header {
-  background-color: var(--edw-app-header-bg, #0e120f);
-  color: var(--edw-app-header-fg, #FFFFFF);
+.oyk-app-header {
+  background-color: var(--oyk-app-header-bg, #0e120f);
+  color: var(--oyk-app-header-fg, #FFFFFF);
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
   gap: 32px;
-  height: var(--edw-app-header-height, 64px);
+  height: var(--oyk-app-header-height, 64px);
   padding: 0 8px;
 
   &-toggle {
@@ -102,20 +102,26 @@
 
   &-notifications {
     flex: 0 0 auto;
-    height: var(--edw-app-header-height);
+    height: var(--oyk-app-header-height);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 16px;
     margin: 0 32px;
+    transition: gap 0.3s, margin 0.3s;
+
+    @media (max-width: 765px) {
+      gap: 0;
+      margin: 0;
+    }
 
     &-button {
       display: flex;
       flex: 0 0 auto;
       align-items: center;
       justify-content: center;
-      height: var(--edw-app-header-height);
-      width: var(--edw-app-header-height);
+      height: var(--oyk-app-header-height);
+      width: var(--oyk-app-header-height);
     }
   }
 

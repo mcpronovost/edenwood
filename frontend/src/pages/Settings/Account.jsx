@@ -3,13 +3,13 @@ import { api } from "@/services/api";
 import { useAuth } from "@/services/auth";
 import { useTranslation } from "@/services/translation";
 import {
-  EdwAlert,
-  EdwButton,
-  EdwCard,
-  EdwForm,
-  EdwFormField,
-  EdwFormMessage,
-  EdwLoading,
+  OykAlert,
+  OykButton,
+  OykCard,
+  OykForm,
+  OykFormField,
+  OykFormMessage,
+  OykLoading,
 } from "@/components/common";
 
 export default function SettingsAccount() {
@@ -97,25 +97,25 @@ export default function SettingsAccount() {
   }, []);
 
   return (
-    <section className="edw-settings-profile">
+    <section className="oyk-settings-profile">
       {hasError?.form ? (
-        <EdwCard>
-          <EdwAlert
+        <OykCard>
+          <OykAlert
             title={t("An error occurred")}
             message={t(
               "Unable to access account data, check your internet connection or try again later"
             )}
             variant="danger"
           />
-        </EdwCard>
+        </OykCard>
       ) : (
-        <EdwCard>
+        <OykCard>
           {isLoading ? (
-            <EdwLoading />
+            <OykLoading />
           ) : (
-            <EdwForm className="edw-settings-form" isLoading={isLoading}>
-              <h2 className="edw-settings-form-title">{t("Your Account")}</h2>
-              <EdwFormField
+            <OykForm className="oyk-settings-form" isLoading={isLoading}>
+              <h2 className="oyk-settings-form-title">{t("Your Account")}</h2>
+              <OykFormField
                 ref={usernameRef}
                 label={t("Username")}
                 name="username"
@@ -125,9 +125,9 @@ export default function SettingsAccount() {
                 required
               />
               {hasError?.username && (
-                <EdwFormMessage hasError={hasError?.username} />
+                <OykFormMessage hasError={hasError?.username} />
               )}
-              <EdwFormField
+              <OykFormField
                 ref={emailRef}
                 label={t("Email")}
                 name="email"
@@ -136,27 +136,27 @@ export default function SettingsAccount() {
                 hasError={hasError?.fields?.email}
                 required
               />
-              {hasError?.email && <EdwFormMessage hasError={hasError?.email} />}
-              <div className="edw-form-actions">
-                <EdwButton
+              {hasError?.email && <OykFormMessage hasError={hasError?.email} />}
+              <div className="oyk-form-actions">
+                <OykButton
                   type="submit"
                   color="primary"
                   disabled={isLoading || isSubmitLoading}
                 >
                   {isSubmitLoading ? t("Saving...") : t("Save")}
-                </EdwButton>
-                <EdwButton
+                </OykButton>
+                <OykButton
                   type="reset"
                   disabled={isLoading || isSubmitLoading}
                   outline
                   action={handleReset}
                 >
                   {t("Cancel")}
-                </EdwButton>
+                </OykButton>
               </div>
-            </EdwForm>
+            </OykForm>
           )}
-        </EdwCard>
+        </OykCard>
       )}
     </section>
   );

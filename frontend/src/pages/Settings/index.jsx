@@ -4,15 +4,15 @@ import { useAuth } from "@/services/auth";
 import { useRouter } from "@/services/router";
 import { useTranslation } from "@/services/translation";
 import {
-  EdwCard,
-  EdwFeedback,
-  EdwGrid,
-  EdwHeading,
-  EdwLink,
+  OykCard,
+  OykFeedback,
+  OykGrid,
+  OykHeading,
+  OykLink,
 } from "@/components/common";
-import EdwError404 from "@/pages/Error404";
-import EdwSettingsProfile from "./Profile";
-import EdwSettingsAccount from "./Account";
+import OykError404 from "@/pages/Error404";
+import OykSettingsProfile from "./Profile";
+import OykSettingsAccount from "./Account";
 
 export default function Settings() {
   const { isAuth } = useAuth();
@@ -70,41 +70,41 @@ export default function Settings() {
   ];
 
   if (!isAuth) {
-    return <EdwError404 />;
+    return <OykError404 />;
   }
 
   return (
-    <section className="edw-page edw-settings">
-      <EdwHeading title={t("Settings")} />
-      <EdwGrid>
-        <div className="edw-settings-grid">
-          <aside className="edw-settings-grid-nav">
-            <nav className="edw-settings-nav">
+    <section className="oyk-page oyk-settings">
+      <OykHeading title={t("Settings")} />
+      <OykGrid>
+        <div className="oyk-settings-grid">
+          <aside className="oyk-settings-grid-nav">
+            <nav className="oyk-settings-nav">
               <ul>
                 {menu.map((m, index) => (
-                  <li key={index} className={`edw-settings-nav-item ${index <= 0 ? "edw-first": ""}`}>
-                    <header className="edw-settings-nav-header">
-                      <span className="edw-settings-nav-header-icon">
-                        <m.Icon size={24} color={"var(--edw-c-primary)"} />
+                  <li key={index} className={`oyk-settings-nav-item ${index <= 0 ? "oyk-first": ""}`}>
+                    <header className="oyk-settings-nav-header">
+                      <span className="oyk-settings-nav-header-icon">
+                        <m.Icon size={24} color={"var(--oyk-c-primary)"} />
                       </span>
-                      <span className="edw-settings-nav-header-title">
-                        <span className="edw-settings-nav-header-title-name">
+                      <span className="oyk-settings-nav-header-title">
+                        <span className="oyk-settings-nav-header-title-name">
                           {m.title}
                         </span>
-                        <small className="edw-settings-nav-header-title-desc">
+                        <small className="oyk-settings-nav-header-title-desc">
                           {m.description}
                         </small>
                       </span>
                     </header>
-                    <ul className="edw-settings-nav-menu">
+                    <ul className="oyk-settings-nav-menu">
                       {m.links.map((l, li) => (
-                        <li key={li} className="edw-settings-nav-menu-item">
-                          <EdwLink
+                        <li key={li} className="oyk-settings-nav-menu-item">
+                          <OykLink
                             routeName={l.routeName}
-                            className={`edw-settings-nav-menu-item-link ${`settings-${params?.section}` === l.routeName ? "edw-active" : ""}`}
+                            className={`oyk-settings-nav-menu-item-link ${`settings-${params?.section}` === l.routeName ? "oyk-active" : ""}`}
                           >
                             {l.name}
-                          </EdwLink>
+                          </OykLink>
                         </li>
                       ))}
                     </ul>
@@ -113,19 +113,19 @@ export default function Settings() {
               </ul>
             </nav>
           </aside>
-          <div className="edw-settings-grid-main">
+          <div className="oyk-settings-grid-main">
             {params?.section === "profile" ? (
-              <EdwSettingsProfile />
+              <OykSettingsProfile />
             ) : params?.section === "account" ? (
-              <EdwSettingsAccount />
+              <OykSettingsAccount />
             ) : (
-              <EdwCard>
-                <EdwFeedback ghost variant="warning" title={t("Under Construction")} message={t("These settings are currently in development and should be available soon")} icon={Construction} />
-              </EdwCard>
+              <OykCard>
+                <OykFeedback ghost variant="warning" title={t("Under Construction")} message={t("These settings are currently in development and should be available soon")} icon={Construction} />
+              </OykCard>
             )}
           </div>
         </div>
-      </EdwGrid>
+      </OykGrid>
     </section>
   );
 }

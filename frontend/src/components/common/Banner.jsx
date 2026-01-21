@@ -1,7 +1,7 @@
 import { DOMAIN } from "@/services/api/utils";
-import EdwAvatar from "./Avatar";
+import OykAvatar from "./Avatar";
 
-export default function EdwBanner({
+export default function OykBanner({
   children,
   avatarSrc,
   avatarAbbr,
@@ -13,16 +13,16 @@ export default function EdwBanner({
   height = 170,
   coverSrc,
   coverHeight = 100,
-  coverRadius = "var(--edw-radius)",
+  coverRadius = "var(--oyk-radius)",
   className,
 }) {
   return (
     <div
-      className={`edw-banner ${className ? className : ""}`}
+      className={`oyk-banner ${className ? className : ""}`}
       style={{ height: `${height}px` }}
     >
       <div
-        className="edw-banner-cover"
+        className="oyk-banner-cover"
         style={{
           borderTopLeftRadius: coverRadius,
           borderTopRightRadius: coverRadius,
@@ -30,7 +30,7 @@ export default function EdwBanner({
         }}
       >
         <div
-          className="edw-banner-cover-image"
+          className="oyk-banner-cover-image"
           style={{
             backgroundImage: coverSrc
               ? `url(${
@@ -42,8 +42,8 @@ export default function EdwBanner({
         ></div>
       </div>
       {showAvatar && (
-        <div className="edw-banner-avatar" style={{ top: `${avatarTop}px` }}>
-          <EdwAvatar
+        <div className="oyk-banner-avatar" style={{ top: `${avatarTop}px` }}>
+          <OykAvatar
             src={avatarSrc}
             abbr={avatarAbbr}
             size={avatarSize}

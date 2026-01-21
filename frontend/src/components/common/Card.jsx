@@ -1,4 +1,4 @@
-export default function EdwCard({
+export default function OykCard({
   children,
   nop = false,
   fh = false,
@@ -11,11 +11,11 @@ export default function EdwCard({
   return (
     <div
       className={[
-        "edw-card",
-        nop ? "edw-card-nop" : "",
-        fh ? "edw-card-fh" : "",
-        alignTop ? "edw-card-aligntop" : "",
-        clickable ? "edw-card-clickable" : "",
+        "oyk-card",
+        nop ? "oyk-card-nop" : "",
+        fh ? "oyk-card-fh" : "",
+        alignTop ? "oyk-card-aligntop" : "",
+        clickable ? "oyk-card-clickable" : "",
         className,
       ]
         .filter(Boolean)

@@ -1,6 +1,6 @@
 import { Info, CircleCheck, CircleX, ShieldAlert } from "lucide-react";
 
-export default function EdwFeedback({
+export default function OykFeedback({
   children,
   title,
   message,
@@ -11,9 +11,9 @@ export default function EdwFeedback({
   ghost = false,
 }) {
   return (
-    <div className={`edw-feedback edw-feedback-variant-${variant} ${ghost ? "edw-feedback-ghost" : ""}`}>
+    <div className={`oyk-feedback oyk-feedback-variant-${variant} ${ghost ? "oyk-feedback-ghost" : ""}`}>
       {showIcon && (
-        <div className="edw-feedback-icon">
+        <div className="oyk-feedback-icon">
           {IconComponent ? (
             <IconComponent size={iconSize} />
           ) : variant === "danger" ? (
@@ -27,10 +27,10 @@ export default function EdwFeedback({
           )}
         </div>
       )}
-      <div className="edw-feedback-content">
-        {title && <p className="edw-feedback-content-title">{title}</p>}
-        {message && <p className="edw-feedback-content-message">{message}</p>}
-        {children && <div className="edw-feedback-content-children">{children}</div>}
+      <div className="oyk-feedback-content">
+        {title && <p className="oyk-feedback-content-title">{title}</p>}
+        {message && <p className="oyk-feedback-content-message">{message}</p>}
+        {children && <div className="oyk-feedback-content-children">{children}</div>}
       </div>
     </div>
   );

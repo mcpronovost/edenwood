@@ -1,10 +1,11 @@
 import { useTranslation } from "@/services/translation";
-import { EdwDisplay, EdwGrid, EdwHeading } from "@/components/common";
-import imgTestCardMyrrhSpore from "@/assets/img/myrrh-spore.webp";
-import imgTestCardFloreePrele from "@/assets/img/floree-prele.webp";
-import imgTestCardFarandoleFeufollet from "@/assets/img/farandole-feufollet.webp";
-import imgTestCardFarandolePuck from "@/assets/img/farandole-puck.webp";
-import imgTestCardSylveSlithy from "@/assets/img/sylve-slithy.webp";
+import { OykDisplay, OykGrid, OykHeading } from "@/components/common";
+
+import imgTestCardMyrrhSpore from "@/assets/img/edenwood/myrrh-spore.webp";
+import imgTestCardFloreePrele from "@/assets/img/edenwood/floree-prele.webp";
+import imgTestCardFarandoleFeufollet from "@/assets/img/edenwood/farandole-feufollet.webp";
+import imgTestCardFarandolePuck from "@/assets/img/edenwood/farandole-puck.webp";
+import imgTestCardSylveSlithy from "@/assets/img/edenwood/sylve-slithy.webp";
 
 export default function Discover() {
   const { t } = useTranslation();
@@ -18,12 +19,12 @@ export default function Discover() {
   ];
 
   return (
-    <section className="edw-page edw-discover">
-      <EdwHeading title={t("Discover")} />
-      <EdwGrid>
+    <section className="oyk-page oyk-discover">
+      <OykHeading title={t("Discover")} />
+      <OykGrid>
         <section style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "12px" }}>
           {displays.map((d, index) => (
-            <EdwDisplay
+            <OykDisplay
               key={index}
               img={d.img}
               name={d.name}
@@ -31,7 +32,7 @@ export default function Discover() {
             />
           ))}
         </section>
-      </EdwGrid>
+      </OykGrid>
     </section>
   );
 }

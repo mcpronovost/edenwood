@@ -2,7 +2,7 @@ import { Loader } from "lucide-react";
 
 import { useRouter } from "@/services/router";
 
-export default function EdwButton({
+export default function OykButton({
   children,
   routeName,
   params = {},
@@ -36,9 +36,9 @@ export default function EdwButton({
       type={type}
       onClick={handleClick}
       disabled={disabled}
-      className={`edw-button ${color ? `edw-button-${color}` : ""} ${plain ? "edw-button-plain" : ""} ${
-        outline ? "edw-button-outline" : ""
-      } ${block ? "edw-button-block" : ""} ${IconComponent && !children ? "edw-button-icon" : ""} ${className}`}
+      className={`oyk-button ${color ? `oyk-button-${color}` : ""} ${plain ? "oyk-button-plain" : ""} ${
+        outline ? "oyk-button-outline" : ""
+      } ${block ? "oyk-button-block" : ""} ${IconComponent && !children ? "oyk-button-icon" : ""} ${className}`}
       style={{
         ...style,
         ...(color?.startsWith("#") && {
@@ -48,12 +48,12 @@ export default function EdwButton({
       }}
     >
       {isLoading && (
-        <span className="edw-button-loading">
-          <Loader size={16} className="edw-button-loading-icon" />
+        <span className="oyk-button-loading">
+          <Loader size={16} className="oyk-button-loading-icon" />
         </span>
       )}
       <span
-        className={`edw-button-content ${isLoading ? "edw-button-content-loading" : ""}`}
+        className={`oyk-button-content ${isLoading ? "oyk-button-content-loading" : ""}`}
         style={color?.startsWith("#") ? { color: color } : {}}
       >
         {IconComponent && <IconComponent size={16} />}

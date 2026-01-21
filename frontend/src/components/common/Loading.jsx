@@ -1,7 +1,7 @@
-export default function EdwLoading({ variant = "circles", fullview = false }) {
+export default function OykLoading({ variant = "circles", fullview = false }) {
   return (
-    <div className={`edw-loading ${fullview ? "edw-loading-fullview" : ""}`}>
-      <div className={`edw-loading-spinner edw-${variant}`}></div>
+    <div className={`oyk-loading ${fullview ? "oyk-loading-fullview" : ""}`}>
+      <div className={`oyk-loading-spinner oyk-${variant}`}></div>
     </div>
   );
 }

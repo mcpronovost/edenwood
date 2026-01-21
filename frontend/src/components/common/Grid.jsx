@@ -1,6 +1,6 @@
-export default function EdwGrid({ children, className, ...props }) {
+export default function OykGrid({ children, className, ...props }) {
   return (
-    <section className={`edw-grid ${className ? className : ""}`} {...props}>
+    <section className={`oyk-grid ${className ? className : ""}`} {...props}>
       {children}
     </section>
   );

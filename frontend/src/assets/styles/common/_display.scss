@@ -1,5 +1,5 @@
-.edw-display {
-  background-color: var(--edw-card-bg);
+.oyk-display {
+  background-color: var(--oyk-card-bg);
   background-position: center;
   background-size: cover;
   border-radius: 32px;
@@ -54,7 +54,7 @@
       padding: 16px 0;
 
       h3 {
-        font-family: "Uncial Antiqua", serif;
+        font-family: "Quicksand", serif;
       }
 
       p {
@@ -72,12 +72,12 @@
   }
 
   &.blurred {
-    .edw-display-content-image {
+    .oyk-display-content-image {
       filter: blur(12px);
     }
 
     &:hover {
-      .edw-display-content-image {
+      .oyk-display-content-image {
         filter: blur(0);
       }
     }

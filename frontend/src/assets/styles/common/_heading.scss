@@ -1,4 +1,4 @@
-.edw-heading {
+.oyk-heading {
   display: flex;
   width: 100%;
   max-width: 1200px;
@@ -18,7 +18,7 @@
 
     &::after {
       content: "";
-      background-color: var(--edw-c-primary);
+      background-color: var(--oyk-c-primary);
       display: block;
       width: 32px;
       height: 2px;
@@ -26,7 +26,7 @@
     }
 
     &-title {
-      font-family: "Uncial Antiqua", sans-serif;
+      font-family: "Quicksand", sans-serif;
       font-size: 2.4rem;
       font-weight: 400;
       line-height: 1.2;

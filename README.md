@@ -1,4 +1,4 @@
-![Oykus](.github/assets/banner.jpg "Oykus")
+![Edenwood](.github/assets/banner.png "Edenwood")
 
 <p align="center">
   <br/>
@@ -13,62 +13,39 @@
 
 </div>
 
-## 🚀 Development Server
+- **Backend:** PHP  
+- **Frontend:** Vite/React
 
-To start the development servers for both the backend and frontend, you can use the `devserver.py` script. This script will launch both the Django backend and the Vite frontend development servers.
+> _This project is a work in progress — but the foundation is set and contributions are welcome!_
 
-### Usage
+---
 
-1. Ensure you have the necessary virtual environment and dependencies installed for both the backend and frontend.
+## 🚀 Quick Start (Dev)
 
-   Inside the root directory, run the following command to install the virtual environment:
+Get the project up and running locally with minimal friction (be sure to have Docker Desktop installed):
+
+1. **Clone the repo**
    ```bash
-   python -m venv .venv
-   ```
+   git clone https://github.com/mcpronovost/edenwood.git
+   cd edenwood
+    ```
 
-   Inside the root directory, run the following command to activate the virtual environment:
+2. **Build the containers**
    ```bash
-   source .venv/Scripts/activate
-   ```
+   docker compose build
+    ```
 
-   Inside the `edenwood/backend` directory, run the following command to install the dependencies:
+3. **Start the containers**
    ```bash
-   pip install -r requirements.txt
-   ```
+   docker compose up
+    ```
 
-   Inside the `edenwood/frontend` directory, run the following command to install the dependencies:
+4. **Run migrations inside backend container**
    ```bash
-   npm install
-   ```
+   php api/oyk/core/scripts/migrate.php
+    ```
 
-2. Run the following command to start the development servers:
-
-   Inside the root directory, run the following command to start the development servers:
+5. **Run sql statements inside database container**
    ```bash
-   python devserver.py
+   mysql -u DB_USER -p DB_NAME
    ```
-
-3. The backend server will start on port `8000`, and the frontend server will start on port `5173`.
-
-4. To use Django management commands, you can use the following command, example to run the migrations:
-
-   ```bash
-   python devserver.py migrate
-   ```
-
-### Stopping the Servers
-
-To stop the servers, you can use `Ctrl+C` in the terminal where the script is running. This will gracefully terminate both the backend and frontend processes.
-
-## 📋 Code of Conduct
-
-Please read our [Code of Conduct](CODE_OF_CONDUCT.md) to understand the standards we expect from our community.
-
-## 🤝 Contributing
-
-We welcome contributions!
-Please see our [Contributing Guidelines](CONTRIBUTING.md) for more details on how to get involved.
-
-## 📜 License
-
-This project is licensed under the [BSD-3-Clause License](LICENSE).

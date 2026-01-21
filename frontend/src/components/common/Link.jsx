@@ -1,7 +1,7 @@
 import { useRouter } from "@/services/router";
 import { buildRoutePath } from "@/services/router/utils";
 
-export default function EdwLink({
+export default function OykLink({
   children,
   routeName,
   params = {},

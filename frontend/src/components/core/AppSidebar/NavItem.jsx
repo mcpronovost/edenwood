@@ -1,4 +1,4 @@
-import { EdwChip, EdwLink } from "@/components/common";
+import { OykChip, OykLink } from "@/components/common";
 
 export default function NavItem({
   icon: IconComponent,
@@ -12,32 +12,32 @@ export default function NavItem({
   disabled = false,
 }) {
   if (sideIconColor !== "currentColor") {
-    sideIconColor = `var(--edw-c-${sideIconColor})`;
+    sideIconColor = `var(--oyk-c-${sideIconColor})`;
   }
 
   return (
-    <li className="edw-app-sidebar-nav-item">
-      <EdwLink
+    <li className="oyk-app-sidebar-nav-item">
+      <OykLink
         routeName={href}
         params={params}
-        className={`edw-app-sidebar-nav-item-link ${disabled ? "disabled" : ""}`}
+        className={`oyk-app-sidebar-nav-item-link ${disabled ? "disabled" : ""}`}
         disabled={disabled}
       >
-        <span className="edw-app-sidebar-nav-item-link-icon">
+        <span className="oyk-app-sidebar-nav-item-link-icon">
           <IconComponent size={18} />
         </span>
-        <span className="edw-app-sidebar-nav-item-link-text">{text}</span>
+        <span className="oyk-app-sidebar-nav-item-link-text">{text}</span>
         {SideIconComponent && (
-          <span className="edw-app-sidebar-nav-item-link-side-icon">
+          <span className="oyk-app-sidebar-nav-item-link-side-icon">
             <SideIconComponent size={16} color={sideIconColor} />
           </span>
         )}
         {sideChip && (
-          <span className="edw-app-sidebar-nav-item-link-side-chip">
-            <EdwChip color={sideChipColor}>{sideChip}</EdwChip>
+          <span className="oyk-app-sidebar-nav-item-link-side-chip">
+            <OykChip color={sideChipColor}>{sideChip}</OykChip>
           </span>
         )}
-      </EdwLink>
+      </OykLink>
     </li>
   );
 }

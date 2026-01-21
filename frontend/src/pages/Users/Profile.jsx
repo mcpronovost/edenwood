@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { api } from "@/services/api";
 import { useRouter } from "@/services/router";
 import { useTranslation } from "@/services/translation";
-import { EdwBanner, EdwCard, EdwFeedback, EdwGrid } from "@/components/common";
+import { OykBanner, OykCard, OykFeedback, OykGrid } from "@/components/common";
 
 export default function UserProfile() {
   const { params } = useRouter();
@@ -13,41 +13,53 @@ export default function UserProfile() {
   const [hasError, setHasError] = useState(null);
   const [userData, setUserData] = useState(null);
 
-  const fetchUserData = async (userSlug) => {
+  const fetchUserData = async (signal) => {
     setIsLoading(true);
     setHasError(null);
     try {
-      const response = await api.get(`/auth/users/${userSlug}/profile/`);
-      if (!response?.success || !response?.user) throw new Error("User doesn't exist");
-      setUserData(response.user);
-    } catch (error) {
-      setHasError(t("An error occurred"));
+      if (!params?.userSlug) throw new Error(t("User doesn't exist"));
+      const r = await api.get(`/auth/users/${params.userSlug}/profile/`, { signal });
+      if (!r?.ok || !r?.user) throw new Error(r.error || t("User doesn't exist"));
+      setUserData(r.user);
+    } catch (e) {
+      if (e?.name === "AbortError") return;
+      setHasError(() => ({
+        message: e.message || t("An error occurred")
+      }));
     } finally {
-      setIsLoading(false);
+      if (!signal.aborted) {
+        setIsLoading(false);
+      }
     }
   }
 
   useEffect(() => {
-    fetchUserData(params?.userSlug);
+    const controller = new AbortController();
+
+    fetchUserData(controller.signal);
+
+    return () => {
+      controller.abort();
+    };
   }, [params]);
 
   return (
-    <section className="edw-page edw-userprofile">
-      <EdwGrid>
+    <section className="oyk-page oyk-userprofile">
+      <OykGrid>
         {(userData && !isLoading && !hasError) ? (
           <>
-            <EdwCard nop>
-              <EdwBanner avatarSrc={userData.avatar} avatarSize={200} avatarTop={90} avatarBorderSize={8} coverSrc={userData.cover} coverHeight={256} height={298} />
-              <section className="edw-userprofile-identity">
-                <h1 className="edw-userprofile-identity-name">{userData.name}</h1>
-                <small className="edw-userprofile-identity-title">Qui ne fait que passer</small>
+            <OykCard nop>
+              <OykBanner avatarSrc={userData.avatar} avatarSize={200} avatarTop={90} avatarBorderSize={8} coverSrc={userData.cover} coverHeight={256} height={298} />
+              <section className="oyk-userprofile-identity">
+                <h1 className="oyk-userprofile-identity-name">{userData.name}</h1>
+                <small className="oyk-userprofile-identity-title">Qui ne fait que passer</small>
               </section>
-            </EdwCard>
+            </OykCard>
           </>
         ) : hasError ? (
-          <EdwFeedback ghost variant="danger" title={t("Error")} message={hasError} />
+          <OykFeedback ghost variant="danger" title={t("Error")} message={hasError.message} />
         ) : null}
-      </EdwGrid>
+      </OykGrid>
     </section>
   );
 }

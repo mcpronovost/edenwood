@@ -1,7 +1,7 @@
 import { Menu } from "lucide-react";
 import { useRouter } from "@/services/router";
 import { useTranslation } from "@/services/translation";
-import { EdwButton, EdwDropdown, EdwLink } from "@/components/common";
+import { OykButton, OykDropdown, OykLink } from "@/components/common";
 
 export default function AppHeaderMenu() {
   const { n } = useRouter();
@@ -21,25 +21,25 @@ export default function AppHeaderMenu() {
   ];
 
   return (
-    <section className="edw-app-header-menu">
-      <div className="edw-app-header-menu-mobile">
-        <EdwDropdown
+    <section className="oyk-app-header-menu">
+      <div className="oyk-app-header-menu-mobile">
+        <OykDropdown
           toggle={
-            <EdwButton className="edw-app-header-menu-mobile-toggle" plain style={{ padding: 0 }}>
+            <OykButton className="oyk-app-header-menu-mobile-toggle" plain style={{ padding: 0 }}>
               <Menu size={24} />
-            </EdwButton>
+            </OykButton>
           }
           menu={menuList}
           direction="right"
         />
       </div>
-      <nav className="edw-app-header-menu-nav">
-        <ul className="edw-app-header-menu-nav-list">
+      <nav className="oyk-app-header-menu-nav">
+        <ul className="oyk-app-header-menu-nav-list">
           {menuList.map((item) => (
-            <li key={item.label} className="edw-app-header-menu-nav-item">
-              <EdwLink routeName={item.routeName} className="edw-app-header-menu-nav-item-link">
+            <li key={item.label} className="oyk-app-header-menu-nav-item">
+              <OykLink routeName={item.routeName} className="oyk-app-header-menu-nav-item-link">
                 {item.label}
-              </EdwLink>
+              </OykLink>
             </li>
           ))}
         </ul>

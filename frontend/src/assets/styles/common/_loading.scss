@@ -1,4 +1,4 @@
-.edw-loading {
+.oyk-loading {
   box-sizing: border-box;
   display: flex;
   width: 100%;
@@ -11,7 +11,7 @@
   }
 
   &-spinner {
-    &.edw-squares {
+    &.oyk-squares {
       display: inline-block;
       width: 48px;
       height: 48px;
@@ -20,7 +20,7 @@
       &::after,
       &::before {
         content: "";
-        border: 2px solid var(--edw-core-fg);
+        border: 2px solid var(--oyk-core-fg);
         box-sizing: border-box;
         width: 48px;
         height: 48px;
@@ -31,33 +31,33 @@
       }
 
       &::after {
-        border-color: var(--edw-c-primary);
+        border-color: var(--oyk-c-primary);
         animation-delay: 1s;
       }
     }
 
-    &.edw-layers {
-      background: var(--edw-core-fg);
-      color: var(--edw-c-primary);
+    &.oyk-layers {
+      background: var(--oyk-core-fg);
+      color: var(--oyk-c-primary);
       position: relative;
       width: 48px;
       height: 48px;
       transform: rotateX(65deg) rotate(45deg);
-      animation: edwloadinglayers1 1s linear infinite alternate;
+      animation: oykloadinglayers1 1s linear infinite alternate;
 
       &:after {
         content: "";
-        background-color: var(--edw-c-primary);
+        background-color: var(--oyk-c-primary);
         inset: 0;
         position: absolute;
         opacity: 0.5;
-        animation: edwloadinglayer2 1s linear infinite alternate;
+        animation: oykloadinglayer2 1s linear infinite alternate;
       }
     }
 
-    &.edw-circles {
+    &.oyk-circles {
       border: 3px solid;
-      border-color: var(--edw-c-primary) var(--edw-c-primary) transparent
+      border-color: var(--oyk-c-primary) var(--oyk-c-primary) transparent
         transparent;
       border-radius: 50%;
       box-sizing: border-box;
@@ -65,13 +65,13 @@
       width: 48px;
       height: 48px;
       position: relative;
-      animation: edwloadingtriplerotation 1s linear infinite;
+      animation: oykloadingtriplerotation 1s linear infinite;
 
       &::after,
       &::before {
         content: "";
         border: 3px solid;
-        border-color: transparent transparent var(--edw-core-fg) var(--edw-core-fg);
+        border-color: transparent transparent var(--oyk-core-fg) var(--oyk-core-fg);
         border-radius: 50%;
         box-sizing: border-box;
         position: absolute;
@@ -83,10 +83,10 @@
         bottom: 0;
         transform-origin: center center;
         margin: auto;
-        animation: edwloadingtriplerotationBack 0.5s linear infinite;
+        animation: oykloadingtriplerotationBack 0.5s linear infinite;
       }
       &::before {
-        border-color: var(--edw-c-primary) var(--edw-c-primary) transparent
+        border-color: var(--oyk-c-primary) var(--oyk-c-primary) transparent
           transparent;
         width: 32px;
         height: 32px;
@@ -96,7 +96,7 @@
   }
 }
 
-@keyframes edwloadingspinner {
+@keyframes oykloadingspinner {
   0% {
     transform: rotate(0deg);
   }
@@ -117,7 +117,7 @@
   }
 }
 
-@keyframes edwloadinglayers1 {
+@keyframes oykloadinglayers1 {
   0% {
     box-shadow: 0px 0px 0 0px;
   }
@@ -126,7 +126,7 @@
     box-shadow: 20px 20px 0 -4px;
   }
 }
-@keyframes edwloadinglayer2 {
+@keyframes oykloadinglayer2 {
   0% {
     transform: translate(0, 0) scale(1);
   }
@@ -135,7 +135,7 @@
   }
 }
 
-@keyframes edwloadingtriplerotation {
+@keyframes oykloadingtriplerotation {
   0% {
     transform: rotate(0deg);
   }
@@ -143,7 +143,7 @@
     transform: rotate(360deg);
   }
 }
-@keyframes edwloadingtriplerotationBack {
+@keyframes oykloadingtriplerotationBack {
   0% {
     transform: rotate(0deg);
   }

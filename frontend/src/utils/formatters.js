@@ -1,5 +1,5 @@
 /* eslint-disable quotes */
-export const edwCode = (text) => {
+export const oykCode = (text) => {
   let r = text
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -37,7 +37,7 @@ export const edwCode = (text) => {
 };
 /* eslint-enable quotes */
 
-export const edwDate = (
+export const oykDate = (
   value,
   show = "full",
   lang = "fr",
@@ -57,11 +57,11 @@ export const edwDate = (
   return d.toLocaleString(lang, o);
 };
 
-export const edwDateLessThan = (date, days) => {
+export const oykDateLessThan = (date, days) => {
   return new Date(date) < new Date(Date.now() + 1000 * 60 * 60 * 24 * days);
 };
 
-export const edwUnit = (num, digits = 2) => {
+export const oykUnit = (num, digits = 2) => {
   const l = [
     { v: 1, u: "" },
     { v: 1e3, u: "k" },
@@ -113,7 +113,7 @@ const adjustColor = (colour, percent) => {
   return `#${r}${g}${b}`;
 };
 
-export const edwContrast = (colour) => {
+export const oykContrast = (colour) => {
   return isLightColor(colour)
     ? adjustColor(colour, -0.6)
     : adjustColor(colour, 0.6);

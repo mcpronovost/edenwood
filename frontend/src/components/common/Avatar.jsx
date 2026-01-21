@@ -1,20 +1,20 @@
 import { User } from "lucide-react";
 import { DOMAIN } from "@/services/api/utils";
 
-export default function EdwAvatar({
+export default function OykAvatar({
   name = "",
   abbr = "",
   src,
   icon: IconComponent = User,
   size = 64,
-  bgColor = "var(--edw-c-primary)",
-  fgColor = "var(--edw-c-primary-fg)",
-  borderColor = "var(--edw-card-bg)",
+  bgColor = "var(--oyk-c-primary)",
+  fgColor = "var(--oyk-c-primary-fg)",
+  borderColor = "var(--oyk-card-bg)",
   borderSize = 2,
 }) {
   return (
     <div
-      className="edw-avatar"
+      className="oyk-avatar"
       style={{
         backgroundColor: src ? borderColor : bgColor,
         borderColor: borderColor,
@@ -25,13 +25,13 @@ export default function EdwAvatar({
       }}
     >
       {src ? (
-        <img src={(!src.startsWith("http") && !src.startsWith("blob")) ? `${DOMAIN}${src}` : src} alt={name} className="edw-avatar-img" />
+        <img src={(!src.startsWith("http") && !src.startsWith("blob")) ? `${DOMAIN}${src}` : src} alt={name} className="oyk-avatar-img" />
       ) : abbr || name ? (
-        <span className="edw-avatar-abbr" style={{ fontSize: size * 0.35 }}>
+        <span className="oyk-avatar-abbr" style={{ fontSize: size * 0.35 }}>
           {abbr || name.charAt(0).toUpperCase()}
         </span>
       ) : (
-        <span className="edw-avatar-icon">
+        <span className="oyk-avatar-icon">
           <IconComponent size={size * 0.5} />
         </span>
       )}

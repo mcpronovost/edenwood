@@ -1,13 +1,13 @@
 import { useTranslation } from "@/services/translation";
 
-import EdwAlert from "./Alert";
+import OykAlert from "./Alert";
 
-export default function EdwFormMessage({ hasError, style }) {
+export default function OykFormMessage({ hasError, style }) {
   const { t } = useTranslation();
 
   return (
-    <div className="edw-form-message" style={style}>
-      {hasError && <EdwAlert title="Error" message={hasError || t("An error occurred")} variant="danger" />}
+    <div className="oyk-form-message" style={style}>
+      {hasError && <OykAlert title="Error" message={hasError || t("An error occurred")} variant="danger" />}
     </div>
   );
 }

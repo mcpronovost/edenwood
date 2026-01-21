@@ -1,4 +1,4 @@
-.edw-dropdown {
+.oyk-dropdown {
   position: relative;
   display: inline-block;
 
@@ -14,10 +14,10 @@
   }
 
   &-menu {
-    background: var(--edw-popper-bg);
+    background: var(--oyk-popper-bg);
     border-radius: 2px;
     box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.4);
-    color: var(--edw-popper-fg);
+    color: var(--oyk-popper-fg);
     min-width: 200px;
     position: absolute;
     top: 100%;
@@ -46,7 +46,7 @@
 
     &-btn {
       background: none;
-      color: var(--edw-popper-fg);
+      color: var(--oyk-popper-fg);
       display: flex;
       align-items: center;
       gap: 12px;
@@ -61,8 +61,8 @@
       }
 
       &:not(:disabled):hover {
-        background-color: var(--edw-popper-item-bg);
-        color: var(--edw-popper-item-fg);
+        background-color: var(--oyk-popper-item-bg);
+        color: var(--oyk-popper-item-fg);
       }
 
       &:not(:disabled):active {
@@ -89,7 +89,7 @@
     }
 
     &-divider {
-      background-color: var(--edw-popper-item-bg);
+      background-color: var(--oyk-popper-item-bg);
       height: 1px;
       margin: 0.5rem 0;
     }

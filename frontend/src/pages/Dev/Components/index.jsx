@@ -2,14 +2,14 @@ import "@/assets/styles/page/_dev-components.scss";
 
 import { useTranslation } from "@/services/translation";
 import {
-  EdwAlert,
-  EdwAvatar,
-  EdwButton,
-  EdwCard,
-  EdwChip,
-  EdwFeedback,
-  EdwGrid,
-  EdwHeading,
+  OykAlert,
+  OykAvatar,
+  OykButton,
+  OykCard,
+  OykChip,
+  OykFeedback,
+  OykGrid,
+  OykHeading,
 } from "@/components/common";
 import ComponentApiTable from "./ComponentApiTable";
 
@@ -17,16 +17,16 @@ export default function Components() {
   const { t } = useTranslation();
 
   return (
-    <section className="edw-page edw-components">
-      <EdwGrid className="edw-components-list">
-        <article id="predefined-colours" className="edw-components-list-item">
-          <EdwHeading title={t("Predefined Colours")} ph={0} />
-          <div className="edw-components-list-item-example">
-            <span style={{ color: "var(--edw-core-fg)" }}>Default text</span>
-            <span style={{ color: "var(--edw-c-primary)" }}>Primary</span>
-            <span style={{ color: "var(--edw-c-danger)" }}>Danger</span>
-            <span style={{ color: "var(--edw-c-success)" }}>Success</span>
-            <EdwCard
+    <section className="oyk-page oyk-components">
+      <OykGrid className="oyk-components-list">
+        <article id="predefined-colours" className="oyk-components-list-item">
+          <OykHeading title={t("Predefined Colours")} ph={0} />
+          <div className="oyk-components-list-item-example">
+            <span style={{ color: "var(--oyk-core-fg)" }}>Default text</span>
+            <span style={{ color: "var(--oyk-c-primary)" }}>Primary</span>
+            <span style={{ color: "var(--oyk-c-danger)" }}>Danger</span>
+            <span style={{ color: "var(--oyk-c-success)" }}>Success</span>
+            <OykCard
               style={{
                 display: "flex",
                 flexDirection: "row",
@@ -34,26 +34,26 @@ export default function Components() {
                 width: "100%",
               }}
             >
-              <span style={{ color: "var(--edw-card-fg)" }}>Card default text</span>
-              <span style={{ color: "var(--edw-c-primary)" }}>Primary</span>
-              <span style={{ color: "var(--edw-c-danger)" }}>Danger</span>
-              <span style={{ color: "var(--edw-c-success)" }}>Success</span>
-            </EdwCard>
+              <span style={{ color: "var(--oyk-card-fg)" }}>Card default text</span>
+              <span style={{ color: "var(--oyk-c-primary)" }}>Primary</span>
+              <span style={{ color: "var(--oyk-c-danger)" }}>Danger</span>
+              <span style={{ color: "var(--oyk-c-success)" }}>Success</span>
+            </OykCard>
           </div>
         </article>
 
-        <article id="alert" className="edw-components-list-item">
-          <EdwHeading title={t("Alert")} ph={0} />
-          <div className="edw-components-list-item-example column">
-            <EdwAlert title="Default Alert" message="Message here" />
+        <article id="alert" className="oyk-components-list-item">
+          <OykHeading title={t("Alert")} ph={0} />
+          <div className="oyk-components-list-item-example column">
+            <OykAlert title="Default Alert" message="Message here" />
             <br />
-            <EdwAlert title="Primary Alert" message="Message here" variant="primary" />
+            <OykAlert title="Primary Alert" message="Message here" variant="primary" />
             <br />
-            <EdwAlert title="Danger Alert" message="Message here" variant="danger" />
+            <OykAlert title="Danger Alert" message="Message here" variant="danger" />
             <br />
-            <EdwAlert title="Success Alert" message="Message here" variant="success" />
+            <OykAlert title="Success Alert" message="Message here" variant="success" />
           </div>
-          <code className="full">{`<EdwAlert title="Title Here" message="Message here" variant="danger" />`}</code>
+          <code className="full">{`<OykAlert title="Title Here" message="Message here" variant="danger" />`}</code>
           <ComponentApiTable
             items={[
               {
@@ -97,17 +97,17 @@ export default function Components() {
           />
         </article>
 
-        <article id="avatar" className="edw-components-list-item">
-          <EdwHeading title={t("Avatar")} ph={0} />
-          <div className="edw-components-list-item-example">
-            <EdwAvatar /> <EdwAvatar size={24} /> <EdwAvatar name="John Johnson" /> <EdwAvatar abbr="JJ" />{" "}
-            <EdwAvatar abbr="JJ" size={32} />{" "}
-            <EdwAvatar src="https://testingbot.com/free-online-tools/random-avatar/140" />{" "}
-            <EdwAvatar src="https://testingbot.com/free-online-tools/random-avatar/64" name="John Johnson" size={48} />{" "}
-            <EdwAvatar src="https://testingbot.com/free-online-tools/random-avatar/32" abbr="JD" size={24} />{" "}
-            <EdwAvatar src="https://testingbot.com/free-online-tools/random-avatar/92" name="John Doe" abbr="JD" />{" "}
+        <article id="avatar" className="oyk-components-list-item">
+          <OykHeading title={t("Avatar")} ph={0} />
+          <div className="oyk-components-list-item-example">
+            <OykAvatar /> <OykAvatar size={24} /> <OykAvatar name="John Johnson" /> <OykAvatar abbr="JJ" />{" "}
+            <OykAvatar abbr="JJ" size={32} />{" "}
+            <OykAvatar src="https://testingbot.com/free-online-tools/random-avatar/140" />{" "}
+            <OykAvatar src="https://testingbot.com/free-online-tools/random-avatar/64" name="John Johnson" size={48} />{" "}
+            <OykAvatar src="https://testingbot.com/free-online-tools/random-avatar/32" abbr="JD" size={24} />{" "}
+            <OykAvatar src="https://testingbot.com/free-online-tools/random-avatar/92" name="John Doe" abbr="JD" />{" "}
           </div>
-          <code className="full">{`<EdwAvatar name="Name Here" src={url} size={24} />`}</code>
+          <code className="full">{`<OykAvatar name="Name Here" src={url} size={24} />`}</code>
           <ComponentApiTable
             items={[
               {
@@ -144,57 +144,57 @@ export default function Components() {
                 name: "bgColor",
                 description: "Background colour",
                 type: "string",
-                defaultValue: "var(--edw-c-primary)",
+                defaultValue: "var(--oyk-c-primary)",
               },
               {
                 name: "fgColor",
                 description: "Colour of the text and icon",
                 type: "string",
-                defaultValue: "var(--edw-c-primary-fg)",
+                defaultValue: "var(--oyk-c-primary-fg)",
               },
               {
                 name: "borderColor",
                 description: "Border colour",
                 type: "string",
-                defaultValue: "var(--edw-card-bg)",
+                defaultValue: "var(--oyk-card-bg)",
               },
             ]}
           />
         </article>
 
-        <article id="button" className="edw-components-list-item">
-          <EdwHeading title={t("Button")} ph={0} />
-          <div className="edw-components-list-item-example">
+        <article id="button" className="oyk-components-list-item">
+          <OykHeading title={t("Button")} ph={0} />
+          <div className="oyk-components-list-item-example">
             <div>
-              <EdwButton>Default Button</EdwButton> <EdwButton color="primary">Primary Button</EdwButton>{" "}
-              <EdwButton color="danger">Danger Button</EdwButton> <EdwButton color="success">Success Button</EdwButton>
+              <OykButton>Default Button</OykButton> <OykButton color="primary">Primary Button</OykButton>{" "}
+              <OykButton color="danger">Danger Button</OykButton> <OykButton color="success">Success Button</OykButton>
             </div>
             <div>
-              <EdwButton outline>Default Button</EdwButton>{" "}
-              <EdwButton outline color="primary">
+              <OykButton outline>Default Button</OykButton>{" "}
+              <OykButton outline color="primary">
                 Primary Button
-              </EdwButton>{" "}
-              <EdwButton outline color="danger">
+              </OykButton>{" "}
+              <OykButton outline color="danger">
                 Danger Button
-              </EdwButton>{" "}
-              <EdwButton outline color="success">
+              </OykButton>{" "}
+              <OykButton outline color="success">
                 Success Button
-              </EdwButton>
+              </OykButton>
             </div>
             <div>
-              <EdwButton disabled>Default Button</EdwButton>{" "}
-              <EdwButton disabled color="primary">
+              <OykButton disabled>Default Button</OykButton>{" "}
+              <OykButton disabled color="primary">
                 Primary Button
-              </EdwButton>{" "}
-              <EdwButton disabled color="danger">
+              </OykButton>{" "}
+              <OykButton disabled color="danger">
                 Danger Button
-              </EdwButton>{" "}
-              <EdwButton disabled color="success">
+              </OykButton>{" "}
+              <OykButton disabled color="success">
                 Success Button
-              </EdwButton>
+              </OykButton>
             </div>
           </div>
-          <code className="full">{`<EdwButton>Default Button</EdwButton>`}</code>
+          <code className="full">{`<OykButton>Default Button</OykButton>`}</code>
           <ComponentApiTable
             items={[
               {
@@ -250,24 +250,24 @@ export default function Components() {
           />
         </article>
 
-        <article id="chip" className="edw-components-list-item">
-          <EdwHeading title={t("Chip")} ph={0} />
-          <div className="edw-components-list-item-example column">
-            <EdwChip>Default Chip</EdwChip> <EdwChip color="primary">Primary Chip</EdwChip>{" "}
-            <EdwChip color="danger">Danger Chip</EdwChip> <EdwChip color="success">Success Chip</EdwChip>
+        <article id="chip" className="oyk-components-list-item">
+          <OykHeading title={t("Chip")} ph={0} />
+          <div className="oyk-components-list-item-example column">
+            <OykChip>Default Chip</OykChip> <OykChip color="primary">Primary Chip</OykChip>{" "}
+            <OykChip color="danger">Danger Chip</OykChip> <OykChip color="success">Success Chip</OykChip>
             <br />
-            <EdwChip outline>Default Chip</EdwChip>{" "}
-            <EdwChip outline color="primary">
+            <OykChip outline>Default Chip</OykChip>{" "}
+            <OykChip outline color="primary">
               Primary Chip
-            </EdwChip>{" "}
-            <EdwChip outline color="danger">
+            </OykChip>{" "}
+            <OykChip outline color="danger">
               Danger Chip
-            </EdwChip>{" "}
-            <EdwChip outline color="success">
+            </OykChip>{" "}
+            <OykChip outline color="success">
               Success Chip
-            </EdwChip>
+            </OykChip>
           </div>
-          <code className="full">{`<EdwChip>Default Chip</EdwChip>`}</code>
+          <code className="full">{`<OykChip>Default Chip</OykChip>`}</code>
           <ComponentApiTable
             items={[
               {
@@ -287,23 +287,23 @@ export default function Components() {
           />
         </article>
 
-        <article id="feedback" className="edw-components-list-item">
-          <EdwHeading title={t("Feedback")} ph={0} />
+        <article id="feedback" className="oyk-components-list-item">
+          <OykHeading title={t("Feedback")} ph={0} />
           <div
-            className="edw-components-list-item-example"
+            className="oyk-components-list-item-example"
             style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "16px" }}
           >
-            <EdwFeedback title="Default Feedback" message="Message here" />
-            <EdwFeedback title="Default Feedback" message="Ghost variant" ghost />
-            <EdwFeedback title="Primary Feedback" message="Message here" variant="primary" />
-            <EdwFeedback title="Primary Feedback" message="Ghost variant" variant="primary" ghost />
-            <EdwFeedback title="Danger Feedback" message="Message here" variant="danger" />
-            <EdwFeedback title="Danger Feedback" message="Ghost variant" variant="danger" ghost />
-            <EdwFeedback title="Success Feedback" message="Message here" variant="success" />
-            <EdwFeedback title="Success Feedback" message="Ghost variant" variant="success" ghost />
+            <OykFeedback title="Default Feedback" message="Message here" />
+            <OykFeedback title="Default Feedback" message="Ghost variant" ghost />
+            <OykFeedback title="Primary Feedback" message="Message here" variant="primary" />
+            <OykFeedback title="Primary Feedback" message="Ghost variant" variant="primary" ghost />
+            <OykFeedback title="Danger Feedback" message="Message here" variant="danger" />
+            <OykFeedback title="Danger Feedback" message="Ghost variant" variant="danger" ghost />
+            <OykFeedback title="Success Feedback" message="Message here" variant="success" />
+            <OykFeedback title="Success Feedback" message="Ghost variant" variant="success" ghost />
           </div>
           <code className="full">
-            {`<EdwFeedback title="Title Here" message="Message here" variant="primary" ghost />`}
+            {`<OykFeedback title="Title Here" message="Message here" variant="primary" ghost />`}
           </code>
           <ComponentApiTable
             items={[
@@ -354,9 +354,9 @@ export default function Components() {
           />
         </article>
 
-        <article className="edw-components-list-item">
-          <EdwHeading title={t("Heading")} ph={0} />
-          <code className="full">{`<EdwHeading title={t("Components")} />`}</code>
+        <article className="oyk-components-list-item">
+          <OykHeading title={t("Heading")} ph={0} />
+          <code className="full">{`<OykHeading title={t("Components")} />`}</code>
           <ComponentApiTable
             items={[
               {
@@ -386,7 +386,7 @@ export default function Components() {
             ]}
           />
         </article>
-      </EdwGrid>
+      </OykGrid>
     </section>
   );
 }

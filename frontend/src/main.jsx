@@ -11,7 +11,7 @@ function Root() {
   );
 }
 
-const edwRoot = document.getElementById("edw");
-if (edwRoot) {
-  createRoot(edwRoot).render(<Root />);
+const oykRoot = document.getElementById("oykus");
+if (oykRoot) {
+  createRoot(oykRoot).render(<Root />);
 }

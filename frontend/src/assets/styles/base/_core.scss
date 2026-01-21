@@ -3,9 +3,9 @@ html {
 }
 
 body {
-  background-color: var(--edw-core-bg);
-  color: var(--edw-core-fg);
-  font-family: "Google Sans Flex", sans-serif;
+  background-color: var(--oyk-core-bg);
+  color: var(--oyk-core-fg);
+  font-family: "Work Sans", sans-serif;
   font-size: 1rem;
   font-synthesis: none;
   font-weight: 400;
@@ -25,26 +25,26 @@ body {
   margin: 0;
 }
 
-#edw {
+#oykus {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
 }
 
-#edw-app {
+#oyk-app {
   display: flex;
   flex-direction: row;
   height: 100vh;
 }
 
-#edw-app-core {
+#oyk-app-core {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-#edw-app-main {
-  overflow-y: auto;
+#oyk-app-main {
+  overflow: hidden;
   display: block;
-  height: calc(100vh - var(--edw-app-header-height, 64px));
+  height: calc(100vh - var(--oyk-app-header-height, 64px));
 }

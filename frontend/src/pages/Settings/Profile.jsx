@@ -3,7 +3,7 @@ import { User, Image } from "lucide-react";
 import { api } from "@/services/api";
 import { useAuth } from "@/services/auth";
 import { useTranslation } from "@/services/translation";
-import { EdwBanner, EdwButton, EdwCard, EdwForm, EdwFormField, EdwFormMessage } from "@/components/common";
+import { OykBanner, OykButton, OykCard, OykForm, OykFormField, OykFormMessage } from "@/components/common";
 
 export default function SettingsProfile() {
   const { currentUser, setUser } = useAuth();
@@ -117,7 +117,7 @@ export default function SettingsProfile() {
         formData.append("cover", profileForm.coverFile);
       }
       const result = await api.post("/auth/me/edit/", formData);
-      if (result.success && result.user) {
+      if (result.ok) {
         setUser(result.user);
         setProfileForm((prev) => ({
           ...prev,
@@ -150,21 +150,21 @@ export default function SettingsProfile() {
   }, [profileForm.avatar, profileForm.cover]);
 
   return (
-    <section className="edw-settings-profile">
-      <article className="edw-settings-profile-visual">
-        <div className="edw-settings-profile-visual-preview">
-          <EdwCard nop fh alignTop>
-            <EdwBanner avatarSize={80} avatarBorderSize={8} avatarTop={48} avatarSrc={profileForm.avatar} coverSrc={profileForm.cover} height={150} />
+    <section className="oyk-settings-profile">
+      <article className="oyk-settings-profile-visual">
+        <div className="oyk-settings-profile-visual-preview">
+          <OykCard nop fh alignTop>
+            <OykBanner avatarSize={80} avatarBorderSize={8} avatarTop={48} avatarSrc={profileForm.avatar} coverSrc={profileForm.cover} height={150} />
             {(hasError?.avatar || hasError?.cover) && (
-              <EdwFormMessage hasError={hasError?.avatar || hasError?.cover} style={{margin: "0 16px 16px"}} />
+              <OykFormMessage hasError={hasError?.avatar || hasError?.cover} style={{margin: "0 16px 16px"}} />
             )}
-          </EdwCard>
+          </OykCard>
         </div>
-        <div className="edw-settings-profile-visual-avatar">
-          <EdwCard fh clickable onClick={() => handleImageClick("avatar")}>
-            <User size={24} color={"var(--edw-c-primary)"} />
-            <p className="edw-settings-profile-visual-avatar-title">{t("Change Avatar")}</p>
-            <small className="edw-settings-profile-visual-avatar-max">{t("200x200px (max 2MB)")}</small>
+        <div className="oyk-settings-profile-visual-avatar">
+          <OykCard fh clickable onClick={() => handleImageClick("avatar")}>
+            <User size={24} color={"var(--oyk-c-primary)"} />
+            <p className="oyk-settings-profile-visual-avatar-title">{t("Change Avatar")}</p>
+            <small className="oyk-settings-profile-visual-avatar-max">{t("200x200px (max 2MB)")}</small>
             <input
               ref={avatarRef}
               name="avatar"
@@ -173,13 +173,13 @@ export default function SettingsProfile() {
               hidden
               onChange={handleAvatarChange}
             />
-          </EdwCard>
+          </OykCard>
         </div>
-        <div className="edw-settings-profile-visual-cover">
-          <EdwCard fh clickable onClick={() => handleImageClick("cover")}>
-            <Image size={24} color={"var(--edw-c-primary)"} />
-            <p className="edw-settings-profile-visual-cover-title">{t("Change Cover")}</p>
-            <small className="edw-settings-profile-visual-cover-max">{t("1136x256px (max 2MB)")}</small>
+        <div className="oyk-settings-profile-visual-cover">
+          <OykCard fh clickable onClick={() => handleImageClick("cover")}>
+            <Image size={24} color={"var(--oyk-c-primary)"} />
+            <p className="oyk-settings-profile-visual-cover-title">{t("Change Cover")}</p>
+            <small className="oyk-settings-profile-visual-cover-max">{t("1136x256px (max 2MB)")}</small>
             <input
               ref={coverRef}
               name="cover"
@@ -188,13 +188,13 @@ export default function SettingsProfile() {
               hidden
               onChange={handleCoverChange}
             />
-          </EdwCard>
+          </OykCard>
         </div>
       </article>
-      <EdwCard>
-        <EdwForm className="edw-settings-form" isLoading={isLoading} onSubmit={handleSubmit}>
-          <h2 className="edw-settings-form-title">{t("Your Profile")}</h2>
-          <EdwFormField
+      <OykCard>
+        <OykForm className="oyk-settings-form" isLoading={isLoading} onSubmit={handleSubmit}>
+          <h2 className="oyk-settings-form-title">{t("Your Profile")}</h2>
+          <OykFormField
             ref={nameRef}
             label={t("Public Name")}
             name="name"
@@ -204,9 +204,9 @@ export default function SettingsProfile() {
             required
           />
           {hasError?.name && (
-            <EdwFormMessage hasError={hasError?.name} />
+            <OykFormMessage hasError={hasError?.name} />
           )}
-          <EdwFormField
+          <OykFormField
             ref={slugRef}
             label={t("Slug")}
             name="slug"
@@ -217,9 +217,9 @@ export default function SettingsProfile() {
             disabled
           />
           {hasError?.slug && (
-            <EdwFormMessage hasError={hasError?.slug} />
+            <OykFormMessage hasError={hasError?.slug} />
           )}
-          <EdwFormField
+          <OykFormField
             ref={abbrRef}
             label={t("Abbreviation")}
             name="abbr"
@@ -230,27 +230,27 @@ export default function SettingsProfile() {
             disabled
           />
           {hasError?.abbr && (
-            <EdwFormMessage hasError={hasError?.abbr} />
+            <OykFormMessage hasError={hasError?.abbr} />
           )}
-          <div className="edw-form-actions">
-            <EdwButton
+          <div className="oyk-form-actions">
+            <OykButton
               type="submit"
               color="primary"
               disabled={isLoading}
             >
               {isLoading ? t("Saving...") : t("Save")}
-            </EdwButton>
-            <EdwButton
+            </OykButton>
+            <OykButton
               type="reset"
               disabled={isLoading}
               outline
               action={handleReset}
             >
               {t("Cancel")}
-            </EdwButton>
+            </OykButton>
           </div>
-        </EdwForm>
-      </EdwCard>
+        </OykForm>
+      </OykCard>
     </section>
   );
 }
