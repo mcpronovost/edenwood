@@ -1,7 +1,7 @@
 <?php
 
 define("JWT_SECRET", getenv("HTTP_JWT_SECRET"));
-define("JWT_ISSUER", "edenwood");
+define("JWT_ISSUER", "oykus");
 define("JWT_EXPIRATION", 3600 * 24 * 30);
 
 function base64url_encode($data) {
@@ -77,4 +77,22 @@ function decode_jwt($token) {
     }
 
     return $payload;
+}
+
+function get_guest_id(): string {
+    if (!isset($_COOKIE["oyk_gid"])) {
+        $token = bin2hex(random_bytes(16));
+        setcookie(
+            "oyk_gid",
+            $token,
+            time() + 86400,
+            "/",
+            "",
+            false,
+            true
+        );
+        return $token;
+    }
+
+    return $_COOKIE["oyk_gid"];
 }
